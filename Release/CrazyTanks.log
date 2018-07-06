@@ -1,0 +1,44 @@
+﻿Сборка начата 05.07.2018 18:09:33.
+     1>Проект "D:\MyGames\CrazyTanks(v_2_0)\CrazyTanks\CrazyTanks\CrazyTanks.vcxproj" в узле 2 (целевые объекты Build).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Visual Leak Detector\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt BattleField.cpp CrazyTank.cpp CrazyTankInput.cpp GameRunning.cpp StartGame.cpp Wall.cpp WallCreator.cpp main.cpp
+         BattleField.cpp
+         CrazyTank.cpp
+         CrazyTankInput.cpp
+         GameRunning.cpp
+         StartGame.cpp
+         Wall.cpp
+         WallCreator.cpp
+         main.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\MyGames\CrazyTanks(v_2_0)\CrazyTanks\Release\CrazyTanks.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Program Files (x86)\Visual Leak Detector\lib\Win32" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\MyGames\CrazyTanks(v_2_0)\CrazyTanks\Release\CrazyTanks.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\MyGames\CrazyTanks(v_2_0)\CrazyTanks\Release\CrazyTanks.lib" /MACHINE:X86 /SAFESEH Release\BattleField.obj
+         Release\Command.obj
+         Release\ConsoleGame.obj
+         Release\CrazyTank.obj
+         Release\CrazyTankInput.obj
+         Release\Direction.obj
+         Release\Entity.obj
+         Release\GamePaused.obj
+         Release\GameRunning.obj
+         Release\GameState.obj
+         Release\MenuState.obj
+         Release\Input.obj
+         Release\main.obj
+         Release\Point.obj
+         Release\StartGame.obj
+         Release\Wall.obj
+         Release\WallBlock.obj
+         Release\WallCreator.obj
+     1>CrazyTank.obj : error LNK2005: "wchar_t * wallBlockPresents" (?wallBlockPresents@@3PA_WA) уже определен в BattleField.obj
+     1>CrazyTankInput.obj : error LNK2005: "wchar_t * wallBlockPresents" (?wallBlockPresents@@3PA_WA) уже определен в BattleField.obj
+     1>GameRunning.obj : error LNK2005: "wchar_t * wallBlockPresents" (?wallBlockPresents@@3PA_WA) уже определен в BattleField.obj
+     1>main.obj : error LNK2005: "wchar_t * wallBlockPresents" (?wallBlockPresents@@3PA_WA) уже определен в BattleField.obj
+     1>StartGame.obj : error LNK2005: "wchar_t * wallBlockPresents" (?wallBlockPresents@@3PA_WA) уже определен в BattleField.obj
+     1>Wall.obj : error LNK2005: "wchar_t * wallBlockPresents" (?wallBlockPresents@@3PA_WA) уже определен в BattleField.obj
+     1>WallCreator.obj : error LNK2005: "wchar_t * wallBlockPresents" (?wallBlockPresents@@3PA_WA) уже определен в BattleField.obj
+     1>D:\MyGames\CrazyTanks(v_2_0)\CrazyTanks\Release\CrazyTanks.exe : fatal error LNK1169: обнаружен многократно определенный символ - один или более
+     1>Сборка проекта "D:\MyGames\CrazyTanks(v_2_0)\CrazyTanks\CrazyTanks\CrazyTanks.vcxproj" завершена (целевые объекты Build) с ошибкой.
+
+Ошибка сборки.
+
+Затраченное время: 00:00:04.21

@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Файлы исходного кода">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Заголовочные файлы">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Game">
+      <UniqueIdentifier>{7f58019d-b64d-4b1e-94dc-8ad43289fdb5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Game\GameStates">
+      <UniqueIdentifier>{01d34095-e1f1-4c82-92de-e75205705423}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Game\Commands">
+      <UniqueIdentifier>{bac5f94b-ac2e-4050-9d2f-b35fbe989b4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Game\Input">
+      <UniqueIdentifier>{06e96be4-c838-4544-b5fe-466a60d251a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\Game">
+      <UniqueIdentifier>{9426ff5d-62b1-4b97-a6cd-d5401cdd76b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\Game\Commands">
+      <UniqueIdentifier>{883a70d8-5714-4ab6-9424-1047ec3bd602}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\Game\GameStates">
+      <UniqueIdentifier>{0dd89c7a-b4c8-465e-980c-698c74c389e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\Game\Input">
+      <UniqueIdentifier>{d7b7c7d5-9c64-448e-8410-6deacb11b634}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Helpers">
+      <UniqueIdentifier>{95ed3161-239e-4589-a15b-f95b33b8fe24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\Helpers">
+      <UniqueIdentifier>{cb1629ca-8847-4a35-8180-9219b5039b2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Entities">
+      <UniqueIdentifier>{ff793824-99c6-4043-b44d-d4a0e07d8710}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\Entities">
+      <UniqueIdentifier>{d82e751b-ca25-4239-836d-7e61e823d16a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Command.h">
+      <Filter>Заголовочные файлы\Game\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="StartGame.h">
+      <Filter>Заголовочные файлы\Game\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="GameState.h">
+      <Filter>Заголовочные файлы\Game\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="GamePaused.h">
+      <Filter>Заголовочные файлы\Game\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="GameRunning.h">
+      <Filter>Заголовочные файлы\Game\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuState.h">
+      <Filter>Заголовочные файлы\Game\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Заголовочные файлы\Game\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="CrazyTankInput.h">
+      <Filter>Заголовочные файлы\Game\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleGame.h">
+      <Filter>Заголовочные файлы\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="CrazyTank.h">
+      <Filter>Заголовочные файлы\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="BattleField.h">
+      <Filter>Заголовочные файлы\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Wall.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="WallCreator.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="Point.h">
+      <Filter>Заголовочные файлы\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Direction.h">
+      <Filter>Заголовочные файлы\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Заголовочные файлы\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="WallBlock.h">
+      <Filter>Заголовочные файлы\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Constants.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="Command.cpp">
+      <Filter>Файлы исходного кода\Game\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="StartGame.cpp">
+      <Filter>Файлы исходного кода\Game\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="GameState.cpp">
+      <Filter>Файлы исходного кода\Game\GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="GameRunning.cpp">
+      <Filter>Файлы исходного кода\Game\GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="GamePaused.cpp">
+      <Filter>Файлы исходного кода\Game\GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuState.cpp">
+      <Filter>Файлы исходного кода\Game\GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="CrazyTankInput.cpp">
+      <Filter>Файлы исходного кода\Game\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Файлы исходного кода\Game\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleGame.cpp">
+      <Filter>Файлы исходного кода\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="CrazyTank.cpp">
+      <Filter>Файлы исходного кода\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="BattleField.cpp">
+      <Filter>Файлы исходного кода\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Wall.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="WallCreator.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="Point.cpp">
+      <Filter>Файлы исходного кода\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Direction.cpp">
+      <Filter>Файлы исходного кода\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Файлы исходного кода\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="WallBlock.cpp">
+      <Filter>Файлы исходного кода\Entities</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
