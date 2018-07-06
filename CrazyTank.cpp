@@ -30,7 +30,7 @@ void CrazyTank::init()
 
 	m_entities.reserve(startVectorSizeForEntities);
 
-	initStronghold();
+	initStronghold(strongHoldWidth,strongHoldHeight);
 	initWalls(wallsOnBattleField);
 }
 
@@ -56,10 +56,10 @@ void CrazyTank::initWalls(const int& wallAmount)
 
 }
 
-bool CrazyTank::initStronghold()
+bool CrazyTank::initStronghold(const int& width, const int& height)
 {
 	StrongHoldCreator creator;
-	StrongHold strongHold = creator.createStrongHold(m_battleField);
+	StrongHold strongHold = creator.createStrongHold(width, height, m_battleField);
 
 	auto strongHoldBlocks = strongHold.getStrohgHoldBlocks();
 	if (strongHoldBlocks.empty())

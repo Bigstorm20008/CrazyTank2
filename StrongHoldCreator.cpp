@@ -10,27 +10,30 @@ StrongHoldCreator::~StrongHoldCreator()
 {
 }
 
-const StrongHold StrongHoldCreator::createStrongHold(const BattleField& battlefield)
+const StrongHold StrongHoldCreator::createStrongHold(const int& width, const int& height, const BattleField& battlefield)
 {
-	StrongHold stronghold;
-	if ((strongHoldHeight > battleFieldHeight) || (strongHoldWidth > battleFieldWidth))
+	StrongHold stronghold(width,height);
+	int battleFieldWidth = battlefield.getWidth();
+	int battleFieldHeight = battlefield.getHeight();
+
+	if ((height > battleFieldHeight) || (width > battleFieldWidth))
 	{
 		return stronghold;
 	}
 
 	int firstWallBlock_YPosition = battleFieldHeight - 1;
-	int firstWallBlock_XPosition = static_cast<int>((battleFieldWidth - strongHoldWidth) / 2);
+	int firstWallBlock_XPosition = static_cast<int>((battleFieldWidth - width) / 2);
 
 	Point startPoint(firstWallBlock_XPosition, firstWallBlock_YPosition);
-	auto leftWall = constructWall(Direction::up, startPoint, strongHoldHeight);
+	auto leftWall = constructWall(Direction::up, startPoint, height);
 
-	startPoint.yPosition -= (strongHoldHeight-1);
+	startPoint.yPosition -= (height-1);
 	++startPoint.xPosition;
-	auto upWall = constructWall(Direction::right, startPoint, strongHoldWidth);
+	auto upWall = constructWall(Direction::right, startPoint, width);
 
-	startPoint.xPosition += (strongHoldWidth-1);
+	startPoint.xPosition += (width-1);
 	++startPoint.yPosition;
-	auto rightWall = constructWall(Direction::down, startPoint, strongHoldHeight-1);
+	auto rightWall = constructWall(Direction::down, startPoint, height-1);
 
 	for (auto& block : leftWall)
 	{
@@ -51,7 +54,7 @@ const StrongHold StrongHoldCreator::createStrongHold(const BattleField& battlefi
 }
 
 
-const std::vector<WallBlock> StrongHoldCreator::constructWall(const Direction::Directions direction, const Point& startPoint, const int& lenght)
+const std::vector<WallBlock> StrongHoldCreator::constructWall(const Direction::Directions& direction, const Point& startPoint, const int& lenght)
 {
 	std::vector<WallBlock> constructedBlocks;
 	constructedBlocks.reserve(lenght);

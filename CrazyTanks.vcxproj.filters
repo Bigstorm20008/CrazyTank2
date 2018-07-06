@@ -90,9 +90,6 @@
     <ClInclude Include="BattleField.h">
       <Filter>Заголовочные файлы\Game</Filter>
     </ClInclude>
-    <ClInclude Include="Wall.h">
-      <Filter>Заголовочные файлы</Filter>
-    </ClInclude>
     <ClInclude Include="Point.h">
       <Filter>Заголовочные файлы\Helpers</Filter>
     </ClInclude>
@@ -111,11 +108,14 @@
     <ClInclude Include="WallCreator.h">
       <Filter>Заголовочные файлы\Generators</Filter>
     </ClInclude>
-    <ClInclude Include="StrongHold.h">
-      <Filter>Заголовочные файлы</Filter>
-    </ClInclude>
     <ClInclude Include="StrongHoldCreator.h">
       <Filter>Заголовочные файлы\Generators</Filter>
+    </ClInclude>
+    <ClInclude Include="StrongHold.h">
+      <Filter>Заголовочные файлы\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Wall.h">
+      <Filter>Заголовочные файлы\Helpers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -155,9 +155,6 @@
     <ClCompile Include="BattleField.cpp">
       <Filter>Файлы исходного кода\Game</Filter>
     </ClCompile>
-    <ClCompile Include="Wall.cpp">
-      <Filter>Файлы исходного кода</Filter>
-    </ClCompile>
     <ClCompile Include="Point.cpp">
       <Filter>Файлы исходного кода\Helpers</Filter>
     </ClCompile>
@@ -173,11 +170,14 @@
     <ClCompile Include="WallCreator.cpp">
       <Filter>Файлы исходного кода\Generators</Filter>
     </ClCompile>
-    <ClCompile Include="StrongHold.cpp">
-      <Filter>Файлы исходного кода</Filter>
-    </ClCompile>
     <ClCompile Include="StrongHoldCreator.cpp">
       <Filter>Файлы исходного кода\Generators</Filter>
+    </ClCompile>
+    <ClCompile Include="StrongHold.cpp">
+      <Filter>Файлы исходного кода\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Wall.cpp">
+      <Filter>Файлы исходного кода\Helpers</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
