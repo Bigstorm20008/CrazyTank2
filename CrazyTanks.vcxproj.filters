@@ -117,6 +117,9 @@
     <ClInclude Include="Wall.h">
       <Filter>Заголовочные файлы\Helpers</Filter>
     </ClInclude>
+    <ClInclude Include="BattleTank.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -178,6 +181,9 @@
     </ClCompile>
     <ClCompile Include="Wall.cpp">
       <Filter>Файлы исходного кода\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="BattleTank.cpp">
+      <Filter>Файлы исходного кода</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

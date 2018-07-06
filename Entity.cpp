@@ -20,3 +20,8 @@ const wchar_t& Entity::getPresents()const
 {
 	return m_presents;
 }
+
+const Direction& Entity::getDirection()const
+{
+	return m_direction;
+}

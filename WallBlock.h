@@ -10,7 +10,10 @@ public:
 	virtual ~WallBlock();
 
 	void doLogic()override;
+
 private:
 	const wchar_t* m_pAllWallblockPresents;
+
+	void processCollision(const wchar_t& collision)override;
 };
 

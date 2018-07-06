@@ -18,3 +18,8 @@ void WallBlock::doLogic()
 {
 
 }
+
+void WallBlock::processCollision(const wchar_t& collision)
+{
+
+}

@@ -90,3 +90,8 @@ void ConsoleGame::printBattleField()const
 {
 	m_battleField.print();
 }
+
+bool ConsoleGame::checkCollisions(const Entity* const entity)
+{
+	return true;
+}

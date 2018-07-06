@@ -16,7 +16,10 @@ const int strongHoldHeight = 4;
 
 //WallBlock constants
 const wchar_t wallBlockPresents[] = { 'X', 'H', 'I'};
-const int wallBlockDurability = sizeof(wallBlockPresents) / sizeof(wchar_t);
+
+
+//StrongHold constants
+const wchar_t strongHoldBlocksPresents[] = { 'H', 'K', 'I' };
 
 
 

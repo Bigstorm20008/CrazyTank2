@@ -30,7 +30,7 @@ void CrazyTank::init()
 
 	m_entities.reserve(startVectorSizeForEntities);
 
-	initStronghold(strongHoldWidth,strongHoldHeight,wallBlockPresents);
+	initStronghold(strongHoldWidth,strongHoldHeight,strongHoldBlocksPresents);
 	initWalls(wallBlockPresents, wallsOnBattleField);
 }
 
@@ -50,7 +50,7 @@ void CrazyTank::initWalls(const wchar_t allWallBlockPresents[], const int& wallA
 			Point position = wallBlock->getPosition();
 			int x = position.xPosition;
 			int y = position.yPosition;
-			m_battleField.setValueInPosition(x, y, wallBlockPresents[0]);
+			m_battleField.setValueInPosition(x, y, allWallBlockPresents[0]);
 		}
 	}
 }
@@ -73,7 +73,7 @@ bool CrazyTank::initStronghold(const int& width, const int& height, const wchar_
 			int x = position.xPosition;
 			int y = position.yPosition;
 			m_entities.push_back(new WallBlock(position, allStrongHoldBlockPresents));
-			m_battleField.setValueInPosition(x, y, wallBlockPresents[0]);
+			m_battleField.setValueInPosition(x, y, allStrongHoldBlockPresents[0]);
 		}
 		return true;
 	}

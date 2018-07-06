@@ -39,6 +39,7 @@ protected:
 
 	void printBattleField()const;
 	void setNewState(GameState* pState);
+	bool checkCollisions(const Entity* const entity);
 private:
 	bool m_isRunning;
 
