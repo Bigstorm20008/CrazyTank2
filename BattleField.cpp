@@ -16,15 +16,15 @@ BattleField::~BattleField()
 	}
 }
 
-void BattleField::init()
+void BattleField::init(const int& width, const int& height)
 {	
-	m_width = battleFieldWidth;
-	m_height = battleFieldHeight;
+	m_width = width;
+	m_height = height;
 
-	m_battleField.reserve(battleFieldHeight);
+	m_battleField.reserve(height);
 	while (m_battleField.size() < m_battleField.capacity())
 	{
-		std::vector<wchar_t> row(battleFieldWidth, emptySpace);
+		std::vector<wchar_t> row(width, emptySpace);
 		m_battleField.push_back(row);
 	}
 	

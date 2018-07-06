@@ -19,5 +19,5 @@ void GameRunning::update()
 void GameRunning::render()
 {
 	system("cls");
-	static_cast<CrazyTank*>(m_pGame)->printBattleField();
+	m_pGame->printBattleField();
 }

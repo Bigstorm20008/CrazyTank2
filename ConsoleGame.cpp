@@ -48,7 +48,7 @@ int ConsoleGame::run()
 		if ((userInput == 'q') || (userInput == 'Q'))
 		{
 			m_isRunning = false;
-			continue;
+			break;
 		}
 		else
 		{
@@ -66,11 +66,12 @@ int ConsoleGame::run()
 
 
 
-void ConsoleGame::setNewState(GameState* const pState)
+void ConsoleGame::setNewState(GameState* pState)
 {
 	if (typeid(*pState) == typeid(*m_pCurrentGameState))
 	{
 		delete pState;
+		pState = nullptr;
 		return;
 	}
 	else if (m_pCurrentGameState)
@@ -79,4 +80,9 @@ void ConsoleGame::setNewState(GameState* const pState)
 		m_pCurrentGameState = nullptr;
 	}
 	m_pCurrentGameState = pState;
+}
+
+void ConsoleGame::printBattleField()const
+{
+	m_battleField.print();
 }

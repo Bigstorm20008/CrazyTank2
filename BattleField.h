@@ -15,19 +15,13 @@ class Entity;
 #include "WallCreator.h"
 
 
-
-//extern const int battleFieldWidth;
-//extern const int battleFieldHeight;
-//extern const int wallsOnBattleField;
-#include "Constants.h"
-
 class BattleField
 {
 public:
 	explicit BattleField();
 	virtual ~BattleField();
 
-	void init();
+	void init(const int& width,const int& height);
 
 	void print()const;
 

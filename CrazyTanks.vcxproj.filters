@@ -49,6 +49,12 @@
     <Filter Include="Файлы исходного кода\Entities">
       <UniqueIdentifier>{d82e751b-ca25-4239-836d-7e61e823d16a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Заголовочные файлы\Generators">
+      <UniqueIdentifier>{8a9e96c5-e3db-424a-b12d-47dfa2ba8ad7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\Generators">
+      <UniqueIdentifier>{1f2bab9e-1e23-4ebf-85b3-df90d29e2826}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Command.h">
@@ -87,9 +93,6 @@
     <ClInclude Include="Wall.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="WallCreator.h">
-      <Filter>Заголовочные файлы</Filter>
-    </ClInclude>
     <ClInclude Include="Point.h">
       <Filter>Заголовочные файлы\Helpers</Filter>
     </ClInclude>
@@ -104,6 +107,9 @@
     </ClInclude>
     <ClInclude Include="Constants.h">
       <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="WallCreator.h">
+      <Filter>Заголовочные файлы\Generators</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -146,9 +152,6 @@
     <ClCompile Include="Wall.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
-    <ClCompile Include="WallCreator.cpp">
-      <Filter>Файлы исходного кода</Filter>
-    </ClCompile>
     <ClCompile Include="Point.cpp">
       <Filter>Файлы исходного кода\Helpers</Filter>
     </ClCompile>
@@ -160,6 +163,9 @@
     </ClCompile>
     <ClCompile Include="WallBlock.cpp">
       <Filter>Файлы исходного кода\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="WallCreator.cpp">
+      <Filter>Файлы исходного кода\Generators</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

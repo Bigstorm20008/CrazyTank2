@@ -26,13 +26,9 @@ void CrazyTank::init()
 	m_pCurrentGameState = new MenuState;
 	m_pInput = new CrazyTankInput;
 
-	m_battleFild.init();
+	m_battleField.init(battleFieldWidth,battleFieldHeight);
 }
 
-void CrazyTank::printBattleField()const
-{
-	m_battleFild.print();
-}
 
 
 

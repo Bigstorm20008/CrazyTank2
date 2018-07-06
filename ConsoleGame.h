@@ -10,27 +10,33 @@ class Input;
 #include "Input.h"
 
 #include "GameState.h"
+#include "BattleField.h"
+
+#include "Constants.h"
+
 
 class ConsoleGame
 {
 public:
+	friend class GameRunning;
+	friend class StartGame;
+
 	explicit ConsoleGame();
 	virtual ~ConsoleGame();
 
 	//intialize input for game and start game state in this function
+	//Call BattleField::init() in this function
 	virtual void init() = 0;
 
 	int run();
 
-	void setNewState(GameState* const pState);
-	
-	
-	
-
 protected:
 	Input* m_pInput;
 	GameState* m_pCurrentGameState;
+	BattleField m_battleField;
 
+	void printBattleField()const;
+	void setNewState(GameState* pState);
 private:
 	bool m_isRunning;
 	
