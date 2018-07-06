@@ -19,7 +19,7 @@ public:
 	void init()override;
 
 private:
-	bool initStronghold(const int& width,const int& height);
-	void initWalls(const int& wallAmount);
+	bool initStronghold(const int& width, const int& height, const wchar_t allStrongHoldBlockPresents[]);
+	void initWalls(const wchar_t allWallBlockPresents[],const int& wallAmount);
 };
 

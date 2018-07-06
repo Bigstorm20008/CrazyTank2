@@ -12,7 +12,7 @@ WallCreator::~WallCreator()
 {
 }
 
-Wall WallCreator::createWall(const BattleField& battleField)
+Wall WallCreator::createWall(const wchar_t allWallBlockPresents[], const BattleField& battleField)
 {
 	std::uniform_int_distribution<int> distance(1, 6);
 	
@@ -28,7 +28,7 @@ Wall WallCreator::createWall(const BattleField& battleField)
 
 	//Create wallblocks for wall
 	Wall wall(wallLenght);
-	createWallBlocks(wall,startPoint,battleField);
+	createWallBlocks(wall, allWallBlockPresents, startPoint, battleField);
 
 	return wall;
 }
@@ -47,10 +47,10 @@ Point WallCreator::generatePoint(const BattleField& battleField)
 	return Point(x, y);
 }
 
-bool WallCreator::createWallBlocks(Wall& wall, const Point& startPoint, const BattleField& battleField)
+bool WallCreator::createWallBlocks(Wall& wall, const wchar_t allWallBlockPresents[], const Point& startPoint, const BattleField& battleField)
 {
 
-	wall.m_wallBlocks.push_back(new WallBlock(startPoint));
+	wall.m_wallBlocks.push_back(new WallBlock(startPoint, allWallBlockPresents));
 
 	Point nextPoint = startPoint;
 
@@ -60,7 +60,7 @@ bool WallCreator::createWallBlocks(Wall& wall, const Point& startPoint, const Ba
 		++rightPoint.xPosition;
 		if (checkPoint(rightPoint, battleField))
 		{
-			wall.m_wallBlocks.push_back(new WallBlock(rightPoint));
+			wall.m_wallBlocks.push_back(new WallBlock(rightPoint, allWallBlockPresents));
 			nextPoint = rightPoint;
 			continue;
 		}
@@ -69,7 +69,7 @@ bool WallCreator::createWallBlocks(Wall& wall, const Point& startPoint, const Ba
 		--leftPoint.xPosition;
 		if (checkPoint(leftPoint, battleField))
 		{
-			wall.m_wallBlocks.push_back(new WallBlock(leftPoint));
+			wall.m_wallBlocks.push_back(new WallBlock(leftPoint, allWallBlockPresents));
 			nextPoint = leftPoint;
 			continue;
 		}
@@ -78,7 +78,7 @@ bool WallCreator::createWallBlocks(Wall& wall, const Point& startPoint, const Ba
 		++upPoint.yPosition;
 		if (checkPoint(upPoint, battleField))
 		{
-			wall.m_wallBlocks.push_back(new WallBlock(upPoint));
+			wall.m_wallBlocks.push_back(new WallBlock(upPoint, allWallBlockPresents));
 			nextPoint = upPoint;
 			continue;
 		}
@@ -87,7 +87,7 @@ bool WallCreator::createWallBlocks(Wall& wall, const Point& startPoint, const Ba
 		--downPoint.yPosition;
 		if (checkPoint(downPoint, battleField))
 		{
-			wall.m_wallBlocks.push_back(new WallBlock(downPoint));
+			wall.m_wallBlocks.push_back(new WallBlock(downPoint, allWallBlockPresents));
 			nextPoint = downPoint;
 			continue;
 		}

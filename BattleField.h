@@ -14,6 +14,7 @@ class Entity;
 
 #include "WallCreator.h"
 
+#include "Constants.h"
 
 class BattleField
 {

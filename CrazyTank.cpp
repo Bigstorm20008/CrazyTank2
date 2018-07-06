@@ -30,19 +30,19 @@ void CrazyTank::init()
 
 	m_entities.reserve(startVectorSizeForEntities);
 
-	initStronghold(strongHoldWidth,strongHoldHeight);
-	initWalls(wallsOnBattleField);
+	initStronghold(strongHoldWidth,strongHoldHeight,wallBlockPresents);
+	initWalls(wallBlockPresents, wallsOnBattleField);
 }
 
 
-void CrazyTank::initWalls(const int& wallAmount)
+void CrazyTank::initWalls(const wchar_t allWallBlockPresents[], const int& wallAmount)
 {
 	WallCreator wallCreator;
 
 	for (int i = 0; i < wallAmount; ++i)
 	{
 
-		Wall wall = wallCreator.createWall(m_battleField);
+		Wall wall = wallCreator.createWall(allWallBlockPresents,m_battleField);
 		auto& wallBlocks = wall.getWallBlocks();
 		for (auto& wallBlock : wallBlocks)
 		{
@@ -53,13 +53,12 @@ void CrazyTank::initWalls(const int& wallAmount)
 			m_battleField.setValueInPosition(x, y, wallBlockPresents[0]);
 		}
 	}
-
 }
 
-bool CrazyTank::initStronghold(const int& width, const int& height)
+bool CrazyTank::initStronghold(const int& width, const int& height, const wchar_t allStrongHoldBlockPresents[])
 {
 	StrongHoldCreator creator;
-	StrongHold strongHold = creator.createStrongHold(width, height, m_battleField);
+	StrongHold strongHold = creator.createStrongHold(width, height, allStrongHoldBlockPresents, m_battleField);
 
 	auto strongHoldBlocks = strongHold.getStrohgHoldBlocks();
 	if (strongHoldBlocks.empty())
@@ -73,7 +72,7 @@ bool CrazyTank::initStronghold(const int& width, const int& height)
 			Point position = block.getPosition();
 			int x = position.xPosition;
 			int y = position.yPosition;
-			m_entities.push_back(new WallBlock(position));
+			m_entities.push_back(new WallBlock(position, allStrongHoldBlockPresents));
 			m_battleField.setValueInPosition(x, y, wallBlockPresents[0]);
 		}
 		return true;
