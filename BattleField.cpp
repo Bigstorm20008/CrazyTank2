@@ -9,11 +9,7 @@ BattleField::BattleField()
 
 BattleField::~BattleField()
 {
-	for (auto& entity : m_entities)
-	{
-		delete entity;
-		entity = nullptr;
-	}
+	
 }
 
 void BattleField::init(const int& width, const int& height)
@@ -27,11 +23,6 @@ void BattleField::init(const int& width, const int& height)
 		std::vector<wchar_t> row(width, emptySpace);
 		m_battleField.push_back(row);
 	}
-	
-
-	m_entities.reserve(startVectorSizeForEntities);
-
- 	initWalls(wallsOnBattleField);
 }
 
 
@@ -58,27 +49,7 @@ void BattleField::setValueInPosition(const int& x, const int& y, const wchar_t& 
 }
 
 
-void BattleField::initWalls(const int& wallAmount)
-{ 
-	WallCreator wallCreator;
-	
-	for (int i = 0; i < wallAmount; ++i)
-	{
-		
-		Wall wall = wallCreator.createWall(*this);
-		auto& wallBlocks = wall.getWallBlocks();
-		for (auto& wallBlock : wallBlocks)
-		{
-			
-			m_entities.push_back(wallBlock);
-			Point position = wallBlock->getPosition();
-			int x = position.xPosition;
-			int y = position.yPosition;		
-			m_battleField[y][x] = wallBlockPresents[0];			
-		}		
-	}
-	
-}
+
 
 
 const int& BattleField::getWidth()const

@@ -3,6 +3,7 @@
 
 GamePaused::GamePaused()
 {
+	m_isVisible = false;
 }
 
 
@@ -17,5 +18,10 @@ void GamePaused::update()
 
 void GamePaused::render()
 {
-	std::cout << "Game paused" << std::endl;
+	if (!m_isVisible)
+	{
+		system("cls");
+		std::cout << "Game paused" << std::endl;
+		m_isVisible = true;
+	}
 }

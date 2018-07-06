@@ -11,7 +11,11 @@ ConsoleGame::ConsoleGame()
 
 ConsoleGame::~ConsoleGame()
 {
-	
+	for (auto& entity : m_entities)
+	{
+		delete entity;
+		entity = nullptr;
+	}
 }
 
 

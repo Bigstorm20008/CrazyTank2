@@ -3,6 +3,7 @@
 
 GameState::GameState()
 {
+	m_isVisible = false;
 }
 
 

@@ -35,10 +35,14 @@ protected:
 	GameState* m_pCurrentGameState;
 	BattleField m_battleField;
 
+	std::vector<Entity*> m_entities;
+
 	void printBattleField()const;
 	void setNewState(GameState* pState);
 private:
 	bool m_isRunning;
+
+	
 	
 };
 

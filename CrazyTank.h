@@ -4,6 +4,7 @@
 #include "CrazyTankInput.h"
 #include "MenuState.h"
 #include "CrazyTankInput.h"
+#include "StrongHoldCreator.h"
 
 
 
@@ -17,10 +18,8 @@ public:
 	
 	void init()override;
 
-	using ConsoleGame::run;
-
 private:
-	using ConsoleGame::printBattleField;
-	using ConsoleGame::setNewState;
+	bool initStronghold();
+	void initWalls(const int& wallAmount);
 };
 

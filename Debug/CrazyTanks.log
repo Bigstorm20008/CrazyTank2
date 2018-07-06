@@ -1,17 +1,28 @@
-﻿Сборка начата 06.07.2018 10:02:30.
+﻿Сборка начата 06.07.2018 13:27:52.
      1>Проект "D:\MyGames\CrazyTank2\CrazyTank2\CrazyTanks.vcxproj" в узле 2 (целевые объекты Build).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt Command.cpp ConsoleGame.cpp CrazyTank.cpp CrazyTankInput.cpp GameRunning.cpp Input.cpp StartGame.cpp main.cpp
-         main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt BattleField.cpp Command.cpp ConsoleGame.cpp CrazyTank.cpp CrazyTankInput.cpp Direction.cpp Entity.cpp GamePaused.cpp GameRunning.cpp GameState.cpp MenuState.cpp Input.cpp main.cpp Point.cpp StartGame.cpp StrongHold.cpp StrongHoldCreator.cpp Wall.cpp WallBlock.cpp WallCreator.cpp
+         WallCreator.cpp
+         WallBlock.cpp
+         Wall.cpp
+         StrongHoldCreator.cpp
+         StrongHold.cpp
          StartGame.cpp
+         Point.cpp
+         main.cpp
+         Input.cpp
+         MenuState.cpp
+         GameState.cpp
          GameRunning.cpp
+         GamePaused.cpp
+         Entity.cpp
+         Direction.cpp
          CrazyTankInput.cpp
          CrazyTank.cpp
-         Создание кода...
-         Пропуск... (изменения не обнаружены)
-         Input.cpp
          ConsoleGame.cpp
          Command.cpp
+         BattleField.cpp
+         Создание кода...
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\MyGames\CrazyTank2\CrazyTank2\Debug\CrazyTanks.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files (x86)\Visual Leak Detector\lib\Win32" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\MyGames\CrazyTank2\CrazyTank2\Debug\CrazyTanks.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\MyGames\CrazyTank2\CrazyTank2\Debug\CrazyTanks.lib" /MACHINE:X86 Debug\BattleField.obj
          Debug\Command.obj
@@ -28,14 +39,16 @@
          Debug\main.obj
          Debug\Point.obj
          Debug\StartGame.obj
+         Debug\StrongHold.obj
+         Debug\StrongHoldCreator.obj
          Debug\Wall.obj
          Debug\WallBlock.obj
          Debug\WallCreator.obj
          CrazyTanks.vcxproj -> D:\MyGames\CrazyTank2\CrazyTank2\Debug\CrazyTanks.exe
        BscMake:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\bscmake.exe /nologo /o"D:\MyGames\CrazyTank2\CrazyTank2\Debug\CrazyTanks.bsc" /n Debug\BattleField.sbr Debug\Command.sbr Debug\ConsoleGame.sbr Debug\CrazyTank.sbr Debug\CrazyTankInput.sbr Debug\Direction.sbr Debug\Entity.sbr Debug\GamePaused.sbr Debug\GameRunning.sbr Debug\GameState.sbr Debug\MenuState.sbr Debug\Input.sbr Debug\main.sbr Debug\Point.sbr Debug\StartGame.sbr Debug\Wall.sbr Debug\WallBlock.sbr Debug\WallCreator.sbr
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\bscmake.exe /nologo /o"D:\MyGames\CrazyTank2\CrazyTank2\Debug\CrazyTanks.bsc" /n Debug\BattleField.sbr Debug\Command.sbr Debug\ConsoleGame.sbr Debug\CrazyTank.sbr Debug\CrazyTankInput.sbr Debug\Direction.sbr Debug\Entity.sbr Debug\GamePaused.sbr Debug\GameRunning.sbr Debug\GameState.sbr Debug\MenuState.sbr Debug\Input.sbr Debug\main.sbr Debug\Point.sbr Debug\StartGame.sbr Debug\StrongHold.sbr Debug\StrongHoldCreator.sbr Debug\Wall.sbr Debug\WallBlock.sbr Debug\WallCreator.sbr
      1>Сборка проекта "D:\MyGames\CrazyTank2\CrazyTank2\CrazyTanks.vcxproj" завершена (целевые объекты Build).
 
 Сборка успешно завершена.
 
-Затраченное время: 00:00:07.27
+Затраченное время: 00:00:15.46

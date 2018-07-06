@@ -39,10 +39,5 @@ private:
 	int m_width;
 	int m_height;
 
-	std::vector<Entity*> m_entities;
-	
-
-	void initWalls(const int& wallAmount);
-
 };
 
