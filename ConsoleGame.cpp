@@ -6,22 +6,19 @@ ConsoleGame::ConsoleGame()
 	m_isRunning = true;
 	m_pInput = nullptr;
 	m_pCurrentGameState = nullptr;
+	m_pActor = nullptr;
 }
 
 
 ConsoleGame::~ConsoleGame()
 {
-	for (auto& entity : m_entities)
-	{
-		delete entity;
-		entity = nullptr;
-	}
+	
 }
 
 
 int ConsoleGame::run()
 {
-	if ((!m_pInput) || (!m_pCurrentGameState))
+	if ((!m_pInput) || (!m_pCurrentGameState)||(!m_pActor))
 	{
 		std::cout << "Initialize game!!!" << std::endl;
 		return 0;
@@ -89,9 +86,4 @@ void ConsoleGame::setNewState(GameState* pState)
 void ConsoleGame::printBattleField()const
 {
 	m_battleField.print();
-}
-
-bool ConsoleGame::checkCollisions(const Entity* const entity)
-{
-	return true;
 }

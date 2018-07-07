@@ -86,8 +86,9 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Action.h" />
+    <ClInclude Include="Actor.h" />
     <ClInclude Include="BattleField.h" />
-    <ClInclude Include="BattleTank.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="ConsoleGame.h" />
     <ClInclude Include="Constants.h" />
@@ -100,6 +101,8 @@
     <ClInclude Include="GameState.h" />
     <ClInclude Include="MenuState.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="MoveForward.h" />
+    <ClInclude Include="PlayerTank.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="StartGame.h" />
     <ClInclude Include="StrongHold.h" />
@@ -109,8 +112,9 @@
     <ClInclude Include="WallCreator.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Action.cpp" />
+    <ClCompile Include="Actor.cpp" />
     <ClCompile Include="BattleField.cpp" />
-    <ClCompile Include="BattleTank.cpp" />
     <ClCompile Include="Command.cpp" />
     <ClCompile Include="ConsoleGame.cpp" />
     <ClCompile Include="CrazyTank.cpp" />
@@ -123,6 +127,8 @@
     <ClCompile Include="MenuState.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MoveForward.cpp" />
+    <ClCompile Include="PlayerTank.cpp" />
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="StartGame.cpp" />
     <ClCompile Include="StrongHold.cpp" />

@@ -19,6 +19,18 @@ CrazyTank::~CrazyTank()
 		delete m_pInput;
 		m_pInput = nullptr;
 	}
+
+	for (auto& entity : m_entities)
+	{
+		delete entity;
+		entity = nullptr;
+	}
+
+	if (m_pActor)
+	{
+		delete m_pActor;
+		m_pActor = nullptr;
+	}
 }
 
 void CrazyTank::init()
@@ -31,7 +43,13 @@ void CrazyTank::init()
 	m_entities.reserve(startVectorSizeForEntities);
 
 	initStronghold(strongHoldWidth,strongHoldHeight,strongHoldBlocksPresents);
-	initWalls(wallBlockPresents, wallsOnBattleField);
+
+	Point playerTankStartPoint(startXPosition, startYPosition);
+	initPlayerTank(playerTankStartPoint, startTankDirection, playerTankPresents, 4);
+
+	//initWalls(wallBlockPresents, wallsOnBattleField);
+
+	
 }
 
 
@@ -77,6 +95,13 @@ bool CrazyTank::initStronghold(const int& width, const int& height, const wchar_
 		}
 		return true;
 	}
+}
+
+
+void CrazyTank::initPlayerTank(const Point& tankPosition, const Direction::Directions& tankDirection, const wchar_t& tankPresent, const int& tankDurability)
+{
+	m_pActor = new PlayerTank(tankPosition, tankDirection, tankPresent, tankDurability);
+	m_battleField.setValueInPosition(tankPosition.xPosition, tankPosition.yPosition, tankPresent);
 }
 
 

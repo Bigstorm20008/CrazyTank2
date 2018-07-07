@@ -55,12 +55,21 @@
     <Filter Include="Файлы исходного кода\Generators">
       <UniqueIdentifier>{1f2bab9e-1e23-4ebf-85b3-df90d29e2826}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Заголовочные файлы\Actor">
+      <UniqueIdentifier>{9af44693-2e5e-4f3d-88f6-4c6d317226ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\Actor">
+      <UniqueIdentifier>{4fb119ca-2fd3-431e-a0c9-0057715c4427}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Game\Commands\GameCommand">
+      <UniqueIdentifier>{ae938206-e235-40e8-9b99-46278db7568e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Game\Commands\ActorCommand">
+      <UniqueIdentifier>{fae3ac7a-7491-4bec-a4da-c92baa5f7ff7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Command.h">
-      <Filter>Заголовочные файлы\Game\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="StartGame.h">
       <Filter>Заголовочные файлы\Game\Commands</Filter>
     </ClInclude>
     <ClInclude Include="GameState.h">
@@ -117,7 +126,19 @@
     <ClInclude Include="Wall.h">
       <Filter>Заголовочные файлы\Helpers</Filter>
     </ClInclude>
-    <ClInclude Include="BattleTank.h">
+    <ClInclude Include="Action.h">
+      <Filter>Заголовочные файлы\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="Actor.h">
+      <Filter>Заголовочные файлы\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerTank.h">
+      <Filter>Заголовочные файлы\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="StartGame.h">
+      <Filter>Заголовочные файлы\Game\Commands\GameCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveForward.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
   </ItemGroup>
@@ -182,7 +203,16 @@
     <ClCompile Include="Wall.cpp">
       <Filter>Файлы исходного кода\Helpers</Filter>
     </ClCompile>
-    <ClCompile Include="BattleTank.cpp">
+    <ClCompile Include="Action.cpp">
+      <Filter>Файлы исходного кода\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor.cpp">
+      <Filter>Файлы исходного кода\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerTank.cpp">
+      <Filter>Файлы исходного кода\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="MoveForward.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
   </ItemGroup>

@@ -11,6 +11,7 @@ class Input;
 
 #include "GameState.h"
 #include "BattleField.h"
+#include "Actor.h"
 
 #include "Constants.h"
 
@@ -18,8 +19,12 @@ class Input;
 class ConsoleGame
 {
 public:
+	//friend State classes
 	friend class GameRunning;
+
+	//friend Command classes
 	friend class StartGame;
+	friend class MoveForward;
 
 	explicit ConsoleGame();
 	virtual ~ConsoleGame();
@@ -36,10 +41,11 @@ protected:
 	BattleField m_battleField;
 
 	std::vector<Entity*> m_entities;
+	Actor* m_pActor;
 
 	void printBattleField()const;
 	void setNewState(GameState* pState);
-	bool checkCollisions(const Entity* const entity);
+	
 private:
 	bool m_isRunning;
 
