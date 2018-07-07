@@ -3,6 +3,7 @@
 
 #include "Input.h"
 #include "StartGame.h"
+#include "MoveForward.h"
 
 
 class CrazyTankInput :

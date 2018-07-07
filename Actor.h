@@ -3,6 +3,7 @@
 #include "Action.h"
 #include "Point.h"
 #include "Direction.h"
+#include "BattleField.h"
 
 class Actor
 {
@@ -10,7 +11,7 @@ public:
 	explicit Actor(const Point& actorPosition, const Direction::Directions& actorDirection, const wchar_t& actorPresent, const int& actorDurability);
 	virtual ~Actor();
 
-	virtual void doAction(const Action::Actions& action) = 0;
+	virtual void doAction(const Action::Actions& action, BattleField& playfield) = 0;
 
 protected:
 	Point m_currentPosition;

@@ -76,3 +76,9 @@ bool BattleField::isValidPoint(const Point& point)const
 	else
 		return true;
 }
+
+
+std::vector<std::vector<wchar_t>>& BattleField::getPlayField()
+{
+	return m_battleField;
+}

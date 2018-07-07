@@ -12,5 +12,8 @@ MoveForward::~MoveForward()
 
 void MoveForward::execute(ConsoleGame& game) const
 {
-	game.m_pActor->doAction(Action::MoveForward);
+	if (typeid(*(game.m_pCurrentGameState)).name() == typeid(GameRunning).name())
+	{
+		game.m_pActor->doAction(Action::MoveForward, game.m_backBuffer);
+	}
 }

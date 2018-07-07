@@ -13,6 +13,7 @@ class CrazyTank :
 	public ConsoleGame
 {
 public:
+
 	explicit CrazyTank();
 	virtual ~CrazyTank();
 

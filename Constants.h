@@ -26,8 +26,9 @@ const wchar_t strongHoldBlocksPresents[] = { 'H', 'K', 'I' };
 //PlayerTank constans
 const wchar_t playerTankPresents = 'T';
 const Direction::Directions startTankDirection = Direction::Directions::up;
-const int startXPosition = ((battleFieldWidth - strongHoldWidth) / 2) + strongHoldWidth + 2;
-const int startYPosition = battleFieldHeight - 1;
+const int actorStartXPosition = ((battleFieldWidth - strongHoldWidth) / 2) + strongHoldWidth + 2;
+const int actorStartYPosition = battleFieldHeight - 1;
+const int actorDurability = 3;
 
 
 

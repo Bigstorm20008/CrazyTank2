@@ -31,6 +31,7 @@ public:
 
 	const int& getWidth()const;
 	const int& getHeight()const;
+	std::vector<std::vector<wchar_t>>& getPlayField();
 
 	bool isFreePoint(const Point& point)const;
 	bool isValidPoint(const Point& point)const;

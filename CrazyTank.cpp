@@ -44,12 +44,12 @@ void CrazyTank::init()
 
 	initStronghold(strongHoldWidth,strongHoldHeight,strongHoldBlocksPresents);
 
-	Point playerTankStartPoint(startXPosition, startYPosition);
-	initPlayerTank(playerTankStartPoint, startTankDirection, playerTankPresents, 4);
+	Point playerTankStartPoint(actorStartXPosition, actorStartYPosition);
+	initPlayerTank(playerTankStartPoint, startTankDirection, playerTankPresents, actorDurability);
 
 	//initWalls(wallBlockPresents, wallsOnBattleField);
 
-	
+	m_backBuffer = m_battleField;
 }
 
 

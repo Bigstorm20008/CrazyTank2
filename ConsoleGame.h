@@ -26,6 +26,9 @@ public:
 	friend class StartGame;
 	friend class MoveForward;
 
+	friend class Actor;
+	friend class PlayerTank;
+
 	explicit ConsoleGame();
 	virtual ~ConsoleGame();
 
@@ -39,6 +42,7 @@ protected:
 	Input* m_pInput;
 	GameState* m_pCurrentGameState;
 	BattleField m_battleField;
+	BattleField m_backBuffer;
 
 	std::vector<Entity*> m_entities;
 	Actor* m_pActor;
@@ -48,6 +52,7 @@ protected:
 	
 private:
 	bool m_isRunning;
+	
 
 	
 	

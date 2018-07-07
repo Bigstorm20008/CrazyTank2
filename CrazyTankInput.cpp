@@ -25,11 +25,18 @@ const Command* const CrazyTankInput::messageHandler(const wchar_t& userInput)
 		m_pCommand = nullptr;
 	}
 
+	
 	switch (userInput)
 	{
 		case 's':
 		{
 			m_pCommand = new StartGame;
+			return m_pCommand;
+		}
+		case 'a':
+		case 'A':
+		{
+			m_pCommand = new MoveForward;
 			return m_pCommand;
 		}
 		default:
