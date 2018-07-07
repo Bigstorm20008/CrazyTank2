@@ -9,6 +9,6 @@ public:
 	Input();
 	virtual ~Input();
 
-	virtual const Command* const messageHandler(const wchar_t& userInput) = 0;
+	virtual const Command* const messageHandler(wchar_t& userInput) = 0;
 };
 

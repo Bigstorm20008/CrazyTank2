@@ -25,6 +25,9 @@ public:
 	//friend Command classes
 	friend class StartGame;
 	friend class MoveForward;
+	friend class MoveBack;
+	friend class MoveRight;
+	friend class MoveLeft;
 
 	friend class Actor;
 	friend class PlayerTank;

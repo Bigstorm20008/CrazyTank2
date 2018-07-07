@@ -4,6 +4,9 @@
 #include "Input.h"
 #include "StartGame.h"
 #include "MoveForward.h"
+#include "MoveBack.h"
+#include "MoveLeft.h"
+#include "MoveRight.h"
 
 
 class CrazyTankInput :
@@ -13,7 +16,7 @@ public:
 	explicit CrazyTankInput();
 	virtual ~CrazyTankInput();
 
-	const Command* const messageHandler(const wchar_t& userInput)override;
+	const Command* const messageHandler(wchar_t& userInput)override;
 private:
 	Command* m_pCommand;
 };

@@ -101,7 +101,10 @@
     <ClInclude Include="GameState.h" />
     <ClInclude Include="MenuState.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="MoveBack.h" />
     <ClInclude Include="MoveForward.h" />
+    <ClInclude Include="MoveLeft.h" />
+    <ClInclude Include="MoveRight.h" />
     <ClInclude Include="PlayerTank.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="StartGame.h" />
@@ -127,7 +130,10 @@
     <ClCompile Include="MenuState.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MoveBack.cpp" />
     <ClCompile Include="MoveForward.cpp" />
+    <ClCompile Include="MoveLeft.cpp" />
+    <ClCompile Include="MoveRight.cpp" />
     <ClCompile Include="PlayerTank.cpp" />
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="StartGame.cpp" />
