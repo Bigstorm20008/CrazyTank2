@@ -9,10 +9,13 @@ public:
 	explicit DynamicEntity();
 	virtual ~DynamicEntity();
 
-	
+	const Direction::Directions& getDirection()const;
+
+protected:
+	Direction::Directions m_direction;
+	void goToNextPositon(ConsoleGame& game);
 private:
-	void goToNextPositon(BattleField& battlefield);
 	const Point computeNextPosition()const;
-	virtual void procesCollision(const wchar_t& collision) = 0;
+	virtual void procesCollision(const Point& point, ConsoleGame& game) = 0;
 };
 

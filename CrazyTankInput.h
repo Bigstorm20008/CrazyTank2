@@ -7,6 +7,7 @@
 #include "MoveBack.h"
 #include "MoveLeft.h"
 #include "MoveRight.h"
+#include "Fire.h"
 
 
 class CrazyTankInput :

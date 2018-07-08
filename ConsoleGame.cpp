@@ -48,6 +48,7 @@ int ConsoleGame::run()
 
 		if ((userInput == 'q') || (userInput == 'Q'))
 		{
+			system("cls");
 			m_isRunning = false;
 			break;
 		}
@@ -86,4 +87,18 @@ void ConsoleGame::setNewState(GameState* pState)
 void ConsoleGame::printBattleField()const
 {
 	m_battleField.print();
+}
+
+Entity* ConsoleGame::getEntityAtPoint(const Point& point) const
+{
+	Entity* foundedEntity = nullptr;
+	for (auto& entity : m_entities)
+	{
+		if (entity->getPosition() == point)
+		{
+			foundedEntity = entity;
+			break;
+		}
+	}
+	return foundedEntity;
 }

@@ -33,6 +33,11 @@ const Command* const CrazyTankInput::messageHandler(wchar_t& userInput)
 			m_pCommand = new StartGame;
 			break;;
 		}
+		case ' ':
+		{
+			m_pCommand = new Fire;
+			break;
+		}
 		case -32:
 		{
 			userInput = _getch();

@@ -6,10 +6,10 @@ class WallBlock :
 	public Entity
 {
 public:
-	WallBlock(const Point& position, const wchar_t* allPresents);
+	explicit WallBlock(const Point& position, const wchar_t* allPresents);
 	virtual ~WallBlock();
 
-	void doLogic(BattleField& backBufferField)override;
+	void doLogic(ConsoleGame& game)override;
 
 private:
 	const wchar_t* m_pAllWallblockPresents;	

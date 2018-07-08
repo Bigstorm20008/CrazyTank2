@@ -14,6 +14,6 @@ void MoveBack::execute(ConsoleGame& game) const
 {
 	if (typeid(*(game.m_pCurrentGameState)).name() == typeid(GameRunning).name())
 	{
-		game.m_pActor->doAction(Action::MoveBack, game.m_backBuffer);
+		game.m_pActor->doAction(Action::MoveBack, game);
 	}
 }

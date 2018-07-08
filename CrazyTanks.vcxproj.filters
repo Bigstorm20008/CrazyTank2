@@ -150,14 +150,20 @@
     <ClInclude Include="MoveBack.h">
       <Filter>Заголовочные файлы\Game\Commands\ActorCommand</Filter>
     </ClInclude>
-    <ClInclude Include="MoveRight.h">
-      <Filter>Заголовочные файлы</Filter>
-    </ClInclude>
-    <ClInclude Include="MoveLeft.h">
-      <Filter>Заголовочные файлы</Filter>
-    </ClInclude>
     <ClInclude Include="DynamicEntity.h">
       <Filter>Заголовочные файлы\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveLeft.h">
+      <Filter>Заголовочные файлы\Game\Commands\ActorCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveRight.h">
+      <Filter>Заголовочные файлы\Game\Commands\ActorCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerBullet.h">
+      <Filter>Заголовочные файлы\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Fire.h">
+      <Filter>Заголовочные файлы\Game\Commands\ActorCommand</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -244,6 +250,12 @@
     </ClCompile>
     <ClCompile Include="DynamicEntity.cpp">
       <Filter>Файлы исходного кода\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerBullet.cpp">
+      <Filter>Файлы исходного кода\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Fire.cpp">
+      <Filter>Файлы исходного кода\Game\Commands\ActorCommands</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

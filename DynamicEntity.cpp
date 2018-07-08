@@ -10,7 +10,7 @@ DynamicEntity::~DynamicEntity()
 {
 }
 
-void DynamicEntity::goToNextPositon(BattleField& battlefield)
+void DynamicEntity::goToNextPositon(ConsoleGame& game)
 {
 	Point nextPoint = computeNextPosition();
 
@@ -19,20 +19,21 @@ void DynamicEntity::goToNextPositon(BattleField& battlefield)
 		return;
 	}
 
-	if (!battlefield.isValidPoint(nextPoint))
+	if (!game.m_backBuffer.isValidPoint(nextPoint))
 	{
+		game.m_backBuffer.setValueInPosition(m_currentPosition.xPosition, m_currentPosition.yPosition, emptySpace);
+		game.m_entitiesToDelete.push_back(this);
 		return;
 	}
 
-	if (!battlefield.isFreePoint(nextPoint))
+	if (!game.m_backBuffer.isFreePoint(nextPoint))
 	{
-		wchar_t collision = battlefield.getValueInPosition(nextPoint.xPosition, nextPoint.yPosition);
-		procesCollision(collision);
+		procesCollision(nextPoint,game);
 	}
 	else
 	{
-		battlefield.setValueInPosition(nextPoint.xPosition, nextPoint.yPosition, m_presents);
-		battlefield.setValueInPosition(m_currentPosition.xPosition, m_currentPosition.yPosition, emptySpace);
+		game.m_backBuffer.setValueInPosition(nextPoint.xPosition, nextPoint.yPosition, m_presents);
+		game.m_backBuffer.setValueInPosition(m_currentPosition.xPosition, m_currentPosition.yPosition, emptySpace);
 		m_currentPosition = nextPoint;
 	}
 }
@@ -40,7 +41,7 @@ void DynamicEntity::goToNextPositon(BattleField& battlefield)
 const Point DynamicEntity::computeNextPosition()const
 {
 	Point nextPoint = m_currentPosition;
-	switch (m_direction.direction)
+	switch (m_direction)
 	{
 	case Direction::Directions::up:
 	{
@@ -69,4 +70,10 @@ const Point DynamicEntity::computeNextPosition()const
 	}
 
 	return nextPoint;
+}
+
+
+const Direction::Directions& DynamicEntity::getDirection()const
+{
+	return m_direction;
 }

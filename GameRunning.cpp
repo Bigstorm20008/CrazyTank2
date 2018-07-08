@@ -14,7 +14,23 @@ GameRunning::~GameRunning()
 
 void GameRunning::update()
 {
-	//m_pGame->m_backBuffer = m_pGame->m_battleField;
+	for (auto& entity : m_pGame->m_entities)
+	{
+		entity->doLogic(*m_pGame);
+	}
+
+	for (auto& entity : m_pGame->m_entitiesToDelete)
+	{
+		Point entityPosition = entity->getPosition();
+		m_pGame->m_backBuffer.setValueInPosition(entityPosition.xPosition, entityPosition.yPosition, emptySpace);
+		auto pos = std::find(m_pGame->m_entities.begin(), m_pGame->m_entities.end(), entity);	
+		m_pGame->m_entities.erase(pos);
+		delete entity;
+		entity = nullptr;
+		
+		
+	}
+	m_pGame->m_entitiesToDelete.clear();
 }
 
 void GameRunning::render()

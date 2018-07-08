@@ -21,7 +21,13 @@ const wchar_t& Entity::getPresents()const
 	return m_presents;
 }
 
-const Direction& Entity::getDirection()const
+void Entity::decreaseHealth()
 {
-	return m_direction;
+	if (m_durability > 0)
+	{
+		--m_durability;
+	}
 }
+
+
+

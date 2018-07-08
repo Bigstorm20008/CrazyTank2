@@ -14,6 +14,7 @@ class Input;
 #include "Actor.h"
 
 class Entity;
+#include "Entity.h"
 #include "Constants.h"
 
 
@@ -29,9 +30,14 @@ public:
 	friend class MoveBack;
 	friend class MoveRight;
 	friend class MoveLeft;
+	friend class Fire;
 
 	friend class Actor;
 	friend class PlayerTank;
+
+	friend class WallBlock;
+	friend class PlayerBullet;
+	friend class DynamicEntity;
 
 	explicit ConsoleGame();
 	virtual ~ConsoleGame();
@@ -55,7 +61,9 @@ protected:
 	void setNewState(GameState* pState);
 	
 private:
+	std::vector<Entity*> m_entitiesToDelete;
 	bool m_isRunning;
+	Entity* getEntityAtPoint(const Point& point) const;
 	
 
 	

@@ -11,33 +11,33 @@ PlayerTank::~PlayerTank()
 {
 }
 
-void PlayerTank::doAction(const Action::Actions& action, BattleField& playfield)
+void PlayerTank::doAction(const Action::Actions& action, ConsoleGame& game)
 {
 	switch (action)
 	{
 		case Action::Actions::MoveBack:
 		{
-			moveToNextPosition(Direction::Directions::down, playfield);
+			moveToNextPosition(Direction::Directions::down, game.m_backBuffer);
 			break;
 		}
 		case Action::Actions::MoveForward:
 		{
-			moveToNextPosition(Direction::Directions::up, playfield);
+			moveToNextPosition(Direction::Directions::up, game.m_backBuffer);
 			break;
 		}
 		case Action::Actions::MoveLeft:
 		{
-			moveToNextPosition(Direction::Directions::left, playfield);
+			moveToNextPosition(Direction::Directions::left, game.m_backBuffer);
 			break;
 		}
 		case Action::Actions::MoveRight:
 		{
-			moveToNextPosition(Direction::Directions::right, playfield);
+			moveToNextPosition(Direction::Directions::right, game.m_backBuffer);
 			break;
 		}
 		case Action::Actions::Fire:
 		{
-			fire();
+			fire(game);
 			break;
 		}
 		default:
@@ -47,8 +47,35 @@ void PlayerTank::doAction(const Action::Actions& action, BattleField& playfield)
 	}
 }
 
-void PlayerTank::fire()
+void PlayerTank::fire(ConsoleGame& game)
 {
+	Point nextPoint = computeNextPosition(m_currentDirection);
+	if (nextPoint == m_currentPosition)
+	{
+		return;
+	}
+
+	if (!game.m_backBuffer.isValidPoint(nextPoint))
+	{
+		return;
+	}
+
+	if (!game.m_backBuffer.isFreePoint(nextPoint))
+	{
+		//process collision;
+		Entity* entity = game.getEntityAtPoint(nextPoint);
+		if (entity)
+		{
+			entity->decreaseHealth();
+		}
+		return;
+	}
+	else
+	{
+		PlayerBullet* bullet = new PlayerBullet(nextPoint, m_currentDirection, bulletPresent);
+		game.m_entities.push_back(bullet);
+		game.m_backBuffer.setValueInPosition(nextPoint.xPosition, nextPoint.yPosition, bulletPresent);
+	}
 
 }
 

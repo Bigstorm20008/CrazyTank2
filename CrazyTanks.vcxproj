@@ -97,6 +97,7 @@
     <ClInclude Include="Direction.h" />
     <ClInclude Include="DynamicEntity.h" />
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="Fire.h" />
     <ClInclude Include="GamePaused.h" />
     <ClInclude Include="GameRunning.h" />
     <ClInclude Include="GameState.h" />
@@ -106,6 +107,7 @@
     <ClInclude Include="MoveForward.h" />
     <ClInclude Include="MoveLeft.h" />
     <ClInclude Include="MoveRight.h" />
+    <ClInclude Include="PlayerBullet.h" />
     <ClInclude Include="PlayerTank.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="StartGame.h" />
@@ -126,6 +128,7 @@
     <ClCompile Include="Direction.cpp" />
     <ClCompile Include="DynamicEntity.cpp" />
     <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="Fire.cpp" />
     <ClCompile Include="GamePaused.cpp" />
     <ClCompile Include="GameRunning.cpp" />
     <ClCompile Include="GameState.cpp" />
@@ -136,6 +139,7 @@
     <ClCompile Include="MoveForward.cpp" />
     <ClCompile Include="MoveLeft.cpp" />
     <ClCompile Include="MoveRight.cpp" />
+    <ClCompile Include="PlayerBullet.cpp" />
     <ClCompile Include="PlayerTank.cpp" />
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="StartGame.cpp" />
