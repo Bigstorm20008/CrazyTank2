@@ -13,6 +13,7 @@ class Input;
 #include "BattleField.h"
 #include "Actor.h"
 
+class Entity;
 #include "Constants.h"
 
 

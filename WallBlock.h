@@ -9,11 +9,9 @@ public:
 	WallBlock(const Point& position, const wchar_t* allPresents);
 	virtual ~WallBlock();
 
-	void doLogic()override;
+	void doLogic(BattleField& backBufferField)override;
 
 private:
-	const wchar_t* m_pAllWallblockPresents;
-
-	void processCollision(const wchar_t& collision)override;
+	const wchar_t* m_pAllWallblockPresents;	
 };
 

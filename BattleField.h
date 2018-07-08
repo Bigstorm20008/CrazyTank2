@@ -9,11 +9,6 @@
 class Point;
 #include "Point.h"
 
-//forward declaration
-class Entity;
-
-#include "WallCreator.h"
-
 #include "Constants.h"
 
 class BattleField

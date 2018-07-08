@@ -31,7 +31,7 @@ const Command* const CrazyTankInput::messageHandler(wchar_t& userInput)
 		case 's':
 		{
 			m_pCommand = new StartGame;
-			return m_pCommand;
+			break;;
 		}
 		case -32:
 		{
@@ -41,26 +41,28 @@ const Command* const CrazyTankInput::messageHandler(wchar_t& userInput)
 		case 77: //Right arrow
 		{
 			m_pCommand = new MoveRight;
-			return m_pCommand;
+			break;;
 		}
 		case 75: //Left arrow
 		{
 			m_pCommand = new MoveLeft;
-			return m_pCommand;
+			break;;
 		}
 		case 80: //Down arrow
 		{
 			m_pCommand = new MoveBack;
-			return m_pCommand;
+			break;;
 		}
 		case 72: //Up arrow
 		{
 			m_pCommand = new MoveForward;
-			return m_pCommand;
+			break;;
 		}
 		default:
 		{
-			return nullptr;
+			break;
 		}
 	}
+
+	return m_pCommand;
 }

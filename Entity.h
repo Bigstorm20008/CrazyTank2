@@ -3,13 +3,16 @@
 #include "Point.h"
 #include "Direction.h"
 
+//class BattleField;
+#include "BattleField.h"
+
 class Entity
 {
 public:
 	Entity();
 	virtual ~Entity();
 
-	virtual void doLogic() = 0;
+	virtual void doLogic(BattleField& backBufferField) = 0;
 	
 
 	const Point& getPosition()const;
@@ -20,8 +23,5 @@ protected:
 	Direction m_direction;
 	wchar_t m_presents;
 	int m_durability;
-
-	virtual void processCollision(const wchar_t& collision) = 0;
-
 };
 

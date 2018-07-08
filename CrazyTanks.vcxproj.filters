@@ -156,6 +156,9 @@
     <ClInclude Include="MoveLeft.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
+    <ClInclude Include="DynamicEntity.h">
+      <Filter>Заголовочные файлы\Entities</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -233,11 +236,14 @@
     <ClCompile Include="MoveBack.cpp">
       <Filter>Файлы исходного кода\Game\Commands\ActorCommands</Filter>
     </ClCompile>
-    <ClCompile Include="MoveRight.cpp">
-      <Filter>Файлы исходного кода</Filter>
-    </ClCompile>
     <ClCompile Include="MoveLeft.cpp">
-      <Filter>Файлы исходного кода</Filter>
+      <Filter>Файлы исходного кода\Game\Commands\ActorCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="MoveRight.cpp">
+      <Filter>Файлы исходного кода\Game\Commands\ActorCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="DynamicEntity.cpp">
+      <Filter>Файлы исходного кода\Entities</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
