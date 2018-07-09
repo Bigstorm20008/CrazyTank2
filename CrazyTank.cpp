@@ -49,7 +49,9 @@ void CrazyTank::init()
 
 	initWalls(wallBlockPresents, wallsOnBattleField);
 
-	m_backBuffer = m_battleField;
+	initEnemyTanks('s', 3, 3);
+
+ 	m_backBuffer = m_battleField;
 }
 
 
@@ -104,6 +106,17 @@ void CrazyTank::initPlayerTank(const Point& tankPosition, const Direction::Direc
 	m_battleField.setValueInPosition(tankPosition.xPosition, tankPosition.yPosition, tankPresent);
 }
 
-
+void CrazyTank::initEnemyTanks(const wchar_t& enemyTankPresent, const unsigned int enemyTankDurability, const unsigned int offsetBetweenTanks)
+{
+	EnemyTankCreator creator(enemyTankPresent, enemyTankDurability, offsetBetweenTanks);
+	for (int i = 0; i < 10; ++i)
+	{
+		EnemyTank* enemyTank = creator.createEnemyTank(m_battleField);
+		m_entities.push_back(enemyTank);
+		int x = enemyTank->getPosition().xPosition;
+		int y = enemyTank->getPosition().yPosition;
+		m_battleField.setValueInPosition(x, y, 'S');
+	}
+}
 
 

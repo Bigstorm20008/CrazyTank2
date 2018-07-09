@@ -6,13 +6,14 @@ class EnemyTank :
 	public DynamicEntity
 {
 public:
-	explicit EnemyTank(const Point& position, const wchar_t& entityPresent, const unsigned int& durability, const Direction::Directions& direction);
+	friend class EnemyTankCreator;
+	
 	virtual ~EnemyTank();
 
 	void doLogic(ConsoleGame& game) override;
-private:
-	
 
+private:
+	explicit EnemyTank(const Point& position, const wchar_t& entityPresent, const unsigned int& durability, const Direction::Directions& direction);
 	void procesCollision(const Point& point, ConsoleGame& game)override;
 };
 

@@ -45,7 +45,10 @@ const wchar_t& BattleField::getValueInPosition(const unsigned int& x, const unsi
 
 void BattleField::setValueInPosition(const unsigned int& x, const unsigned int& y, const wchar_t& value)
 {
-	m_battleField[y][x] = value;
+	if (isValidPoint(Point(x,y)))
+	{ 
+		m_battleField[y][x] = value;
+	}
 }
 
 const unsigned int& BattleField::getWidth()const

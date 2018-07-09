@@ -89,6 +89,7 @@
     <ClInclude Include="Action.h" />
     <ClInclude Include="Actor.h" />
     <ClInclude Include="BattleField.h" />
+    <ClInclude Include="BattleFieldHelpers.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="ConsoleGame.h" />
@@ -98,6 +99,7 @@
     <ClInclude Include="Direction.h" />
     <ClInclude Include="DynamicEntity.h" />
     <ClInclude Include="EnemyTank.h" />
+    <ClInclude Include="EnemyTankCreator.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Fire.h" />
     <ClInclude Include="GamePaused.h" />
@@ -112,6 +114,7 @@
     <ClInclude Include="PlayerBullet.h" />
     <ClInclude Include="PlayerTank.h" />
     <ClInclude Include="Point.h" />
+    <ClInclude Include="RandomEngine.h" />
     <ClInclude Include="StartGame.h" />
     <ClInclude Include="StrongHold.h" />
     <ClInclude Include="StrongHoldCreator.h" />
@@ -123,6 +126,7 @@
     <ClCompile Include="Action.cpp" />
     <ClCompile Include="Actor.cpp" />
     <ClCompile Include="BattleField.cpp" />
+    <ClCompile Include="BattleFieldHelpers.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Command.cpp" />
     <ClCompile Include="ConsoleGame.cpp" />
@@ -131,6 +135,7 @@
     <ClCompile Include="Direction.cpp" />
     <ClCompile Include="DynamicEntity.cpp" />
     <ClCompile Include="EnemyTank.cpp" />
+    <ClCompile Include="EnemyTankCreator.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Fire.cpp" />
     <ClCompile Include="GamePaused.cpp" />
@@ -146,6 +151,7 @@
     <ClCompile Include="PlayerBullet.cpp" />
     <ClCompile Include="PlayerTank.cpp" />
     <ClCompile Include="Point.cpp" />
+    <ClCompile Include="RandomEngine.cpp" />
     <ClCompile Include="StartGame.cpp" />
     <ClCompile Include="StrongHold.cpp" />
     <ClCompile Include="StrongHoldCreator.cpp" />

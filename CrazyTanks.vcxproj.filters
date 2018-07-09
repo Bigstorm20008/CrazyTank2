@@ -171,6 +171,15 @@
     <ClInclude Include="EnemyTank.h">
       <Filter>Заголовочные файлы\Entities</Filter>
     </ClInclude>
+    <ClInclude Include="EnemyTankCreator.h">
+      <Filter>Заголовочные файлы\Generators</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomEngine.h">
+      <Filter>Заголовочные файлы\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="BattleFieldHelpers.h">
+      <Filter>Заголовочные файлы\Helpers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -268,6 +277,15 @@
     </ClCompile>
     <ClCompile Include="EnemyTank.cpp">
       <Filter>Файлы исходного кода\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyTankCreator.cpp">
+      <Filter>Файлы исходного кода\Generators</Filter>
+    </ClCompile>
+    <ClCompile Include="RandomEngine.cpp">
+      <Filter>Файлы исходного кода\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="BattleFieldHelpers.cpp">
+      <Filter>Файлы исходного кода\Helpers</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
