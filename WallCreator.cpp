@@ -28,7 +28,7 @@ Wall WallCreator::createWall(const wchar_t allWallBlockPresents[], const BattleF
 
 	//Create wallblocks for wall
 	Wall wall(wallLenght);
-	createWallBlocks(wall, allWallBlockPresents, startPoint, battleField);
+	createWallBlocks(startPoint, allWallBlockPresents, wall, battleField);
 
 	return wall;
 }
@@ -47,47 +47,49 @@ Point WallCreator::generatePoint(const BattleField& battleField)
 	return Point(x, y);
 }
 
-bool WallCreator::createWallBlocks(Wall& wall, const wchar_t allWallBlockPresents[], const Point& startPoint, const BattleField& battleField)
-{
+bool WallCreator::createWallBlocks(const Point& position, const wchar_t* allWallBlockPresents, Wall& wall, const BattleField& battleField)
+{	 
+	unsigned int wallBlockDurability = wcslen(allWallBlockPresents);
+	wchar_t startWallBlockPresent = allWallBlockPresents[0];
 
-	wall.m_wallBlocks.push_back(new WallBlock(startPoint, allWallBlockPresents));
+	wall.m_wallBlocks.push_back(new WallBlock(position, startWallBlockPresent, wallBlockDurability, allWallBlockPresents));
 
-	Point nextPoint = startPoint;
+	Point nextPoint = position;
 
 	for (int i = 1; i < wall.m_wallLenght; ++i)
 	{
-		Point rightPoint = startPoint;
+		Point rightPoint = position;
 		++rightPoint.xPosition;
 		if (checkPoint(rightPoint, battleField))
 		{
-			wall.m_wallBlocks.push_back(new WallBlock(rightPoint, allWallBlockPresents));
+			wall.m_wallBlocks.push_back(new WallBlock(rightPoint, startWallBlockPresent, wallBlockDurability, allWallBlockPresents));
 			nextPoint = rightPoint;
 			continue;
 		}
 
-		Point leftPoint = startPoint;
+		Point leftPoint = position;
 		--leftPoint.xPosition;
 		if (checkPoint(leftPoint, battleField))
 		{
-			wall.m_wallBlocks.push_back(new WallBlock(leftPoint, allWallBlockPresents));
+			wall.m_wallBlocks.push_back(new WallBlock(leftPoint, startWallBlockPresent, wallBlockDurability, allWallBlockPresents));
 			nextPoint = leftPoint;
 			continue;
 		}
 
-		Point upPoint = startPoint;
+		Point upPoint = position;
 		++upPoint.yPosition;
 		if (checkPoint(upPoint, battleField))
 		{
-			wall.m_wallBlocks.push_back(new WallBlock(upPoint, allWallBlockPresents));
+			wall.m_wallBlocks.push_back(new WallBlock(upPoint, startWallBlockPresent, wallBlockDurability, allWallBlockPresents));
 			nextPoint = upPoint;
 			continue;
 		}
 
-		Point downPoint = startPoint;
+		Point downPoint = position;
 		--downPoint.yPosition;
 		if (checkPoint(downPoint, battleField))
 		{
-			wall.m_wallBlocks.push_back(new WallBlock(downPoint, allWallBlockPresents));
+			wall.m_wallBlocks.push_back(new WallBlock(downPoint, startWallBlockPresent, wallBlockDurability, allWallBlockPresents));
 			nextPoint = downPoint;
 			continue;
 		}

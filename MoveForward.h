@@ -5,8 +5,12 @@ class MoveForward :
 	public Command
 {
 public:
-	MoveForward();
+	friend class CrazyTankInput;
+	
 	virtual ~MoveForward();
 	void execute(ConsoleGame& game) const override;
+
+private:
+	explicit MoveForward();
 };
 

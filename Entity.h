@@ -9,7 +9,7 @@
 class Entity
 {
 public:
-	Entity();
+	Entity(const Point& position, const wchar_t& entityPresent, const unsigned int& durability);
 	virtual ~Entity();
 
 	virtual void doLogic(ConsoleGame& game) = 0;

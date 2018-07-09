@@ -1,7 +1,8 @@
 #include "Entity.h"
 
 
-Entity::Entity()
+Entity::Entity(const Point& position, const wchar_t& entityPresent, const unsigned int& durability)
+	: m_currentPosition(position), m_presents(entityPresent), m_durability(durability)
 {
 }
 

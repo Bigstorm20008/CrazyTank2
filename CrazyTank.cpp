@@ -90,7 +90,7 @@ bool CrazyTank::initStronghold(const int& width, const int& height, const wchar_
 			Point position = block.getPosition();
 			int x = position.xPosition;
 			int y = position.yPosition;
-			m_entities.push_back(new WallBlock(position, allStrongHoldBlockPresents));
+			m_entities.push_back(new WallBlock(block));
 			m_battleField.setValueInPosition(x, y, allStrongHoldBlockPresents[0]);
 		}
 		return true;

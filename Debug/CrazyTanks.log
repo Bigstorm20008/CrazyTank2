@@ -1,18 +1,45 @@
-﻿Сборка начата 08.07.2018 15:11:11.
+﻿Сборка начата 09.07.2018 19:45:07.
      1>Проект "D:\MyGames\CrazyTank2\CrazyTank2\CrazyTanks.vcxproj" в узле 2 (целевые объекты Build).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt DynamicEntity.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt Actor.cpp BattleField.cpp Command.cpp ConsoleGame.cpp CrazyTank.cpp CrazyTankInput.cpp DynamicEntity.cpp Entity.cpp GameRunning.cpp Input.cpp MoveBack.cpp MoveForward.cpp MoveLeft.cpp MoveRight.cpp PlayerTank.cpp StartGame.cpp StrongHold.cpp StrongHoldCreator.cpp Wall.cpp WallBlock.cpp WallCreator.cpp main.cpp
+         WallCreator.cpp
+         Создание кода...
+         Компиляция...
+         CrazyTank.cpp
+         Создание кода...
+         Пропуск... (изменения не обнаружены)
+         WallBlock.cpp
+         StrongHold.cpp
+         PlayerTank.cpp
+         MoveRight.cpp
+         MoveLeft.cpp
+         MoveForward.cpp
+         MoveBack.cpp
+         Input.cpp
+         Entity.cpp
          DynamicEntity.cpp
+         ConsoleGame.cpp
+         Command.cpp
+         BattleField.cpp
+         Actor.cpp
+         Wall.cpp
+         main.cpp
+         StrongHoldCreator.cpp
+         StartGame.cpp
+         GameRunning.cpp
+         CrazyTankInput.cpp
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\MyGames\CrazyTank2\CrazyTank2\Debug\CrazyTanks.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files (x86)\Visual Leak Detector\lib\Win32" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\MyGames\CrazyTank2\CrazyTank2\Debug\CrazyTanks.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\MyGames\CrazyTank2\CrazyTank2\Debug\CrazyTanks.lib" /MACHINE:X86 Debug\Action.obj
          Debug\Actor.obj
          Debug\BattleField.obj
+         Debug\Bullet.obj
          Debug\Command.obj
          Debug\ConsoleGame.obj
          Debug\CrazyTank.obj
          Debug\CrazyTankInput.obj
          Debug\Direction.obj
          Debug\DynamicEntity.obj
+         Debug\EnemyTank.obj
          Debug\Entity.obj
          Debug\Fire.obj
          Debug\GamePaused.obj
@@ -36,9 +63,9 @@
          Debug\WallCreator.obj
          CrazyTanks.vcxproj -> D:\MyGames\CrazyTank2\CrazyTank2\Debug\CrazyTanks.exe
        BscMake:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\bscmake.exe /nologo /o"D:\MyGames\CrazyTank2\CrazyTank2\Debug\CrazyTanks.bsc" /n Debug\Action.sbr Debug\Actor.sbr Debug\BattleField.sbr Debug\Command.sbr Debug\ConsoleGame.sbr Debug\CrazyTank.sbr Debug\CrazyTankInput.sbr Debug\Direction.sbr Debug\DynamicEntity.sbr Debug\Entity.sbr Debug\Fire.sbr Debug\GamePaused.sbr Debug\GameRunning.sbr Debug\GameState.sbr Debug\MenuState.sbr Debug\Input.sbr Debug\main.sbr Debug\MoveBack.sbr Debug\MoveForward.sbr Debug\MoveLeft.sbr Debug\MoveRight.sbr Debug\PlayerBullet.sbr Debug\PlayerTank.sbr Debug\Point.sbr Debug\StartGame.sbr Debug\StrongHold.sbr Debug\StrongHoldCreator.sbr Debug\Wall.sbr Debug\WallBlock.sbr Debug\WallCreator.sbr
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\bscmake.exe /nologo /o"D:\MyGames\CrazyTank2\CrazyTank2\Debug\CrazyTanks.bsc" /n Debug\Action.sbr Debug\Actor.sbr Debug\BattleField.sbr Debug\Bullet.sbr Debug\Command.sbr Debug\ConsoleGame.sbr Debug\CrazyTank.sbr Debug\CrazyTankInput.sbr Debug\Direction.sbr Debug\DynamicEntity.sbr Debug\EnemyTank.sbr Debug\Entity.sbr Debug\Fire.sbr Debug\GamePaused.sbr Debug\GameRunning.sbr Debug\GameState.sbr Debug\MenuState.sbr Debug\Input.sbr Debug\main.sbr Debug\MoveBack.sbr Debug\MoveForward.sbr Debug\MoveLeft.sbr Debug\MoveRight.sbr Debug\PlayerBullet.sbr Debug\PlayerTank.sbr Debug\Point.sbr Debug\StartGame.sbr Debug\StrongHold.sbr Debug\StrongHoldCreator.sbr Debug\Wall.sbr Debug\WallBlock.sbr Debug\WallCreator.sbr
      1>Сборка проекта "D:\MyGames\CrazyTank2\CrazyTank2\CrazyTanks.vcxproj" завершена (целевые объекты Build).
 
 Сборка успешно завершена.
 
-Затраченное время: 00:00:06.48
+Затраченное время: 00:00:08.06

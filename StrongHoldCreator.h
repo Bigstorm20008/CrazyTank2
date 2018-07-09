@@ -7,13 +7,17 @@
 class StrongHoldCreator
 {
 public:
-	explicit StrongHoldCreator();
-	virtual ~StrongHoldCreator();
+	friend class CrazyTank;
+	
+	~StrongHoldCreator();
 
-	const StrongHold createStrongHold(const int& width,const int& height, const wchar_t allStrongHoldBlockPresents[], const BattleField& battlefield);
+	const StrongHold createStrongHold(const unsigned int& width, const unsigned int& height, const wchar_t allStrongholdBlockPresents[], const BattleField& battlefield);
 
 private:
-	const std::vector<WallBlock> constructWall(const Direction::Directions& direction, const Point& startPoint, const int& lenght, const wchar_t allStrongHoldBlockPresents[]);
+	explicit StrongHoldCreator();
+
+	const std::vector<WallBlock> constructWall(const Point& startPoint, const wchar_t& entityPresent, const unsigned int& durability, const wchar_t* allWallBlockPresents,
+		                                       const unsigned int& lenght, const Direction::Directions& direction);
 
 
 };

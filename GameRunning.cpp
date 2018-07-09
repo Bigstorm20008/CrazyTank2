@@ -39,6 +39,7 @@ void GameRunning::render()
 	{
 		system("cls");
 		m_pGame->printBattleField();
+		//m_pGame->m_backBuffer = m_pGame->m_battleField;
 		m_isVisible = true;
 	}
 	else

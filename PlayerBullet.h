@@ -1,9 +1,9 @@
 #pragma once
 
-#include "DynamicEntity.h"
+#include "Bullet.h"
 
 class PlayerBullet :
-	public DynamicEntity
+	public Bullet
 {
 public:
 	friend class PlayerTank;
@@ -11,7 +11,7 @@ public:
 
 	void doLogic(ConsoleGame& game)override;
 private:
-	explicit PlayerBullet(const Point& startPostion, const Direction::Directions& direction, const wchar_t& bulletPresent);
+	explicit PlayerBullet(const Point& position, const wchar_t& entityPresent, const unsigned int& durability, const Direction::Directions& direction);
 
 	void procesCollision(const Point& point, ConsoleGame& game)override;
 };

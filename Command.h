@@ -10,5 +10,8 @@ public:
 	virtual ~Command();
 
 	virtual void execute(ConsoleGame& game) const  = 0;
+
+private:
+	
 };
 

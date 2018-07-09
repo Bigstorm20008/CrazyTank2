@@ -89,6 +89,7 @@
     <ClInclude Include="Action.h" />
     <ClInclude Include="Actor.h" />
     <ClInclude Include="BattleField.h" />
+    <ClInclude Include="Bullet.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="ConsoleGame.h" />
     <ClInclude Include="Constants.h" />
@@ -96,6 +97,7 @@
     <ClInclude Include="CrazyTankInput.h" />
     <ClInclude Include="Direction.h" />
     <ClInclude Include="DynamicEntity.h" />
+    <ClInclude Include="EnemyTank.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Fire.h" />
     <ClInclude Include="GamePaused.h" />
@@ -121,12 +123,14 @@
     <ClCompile Include="Action.cpp" />
     <ClCompile Include="Actor.cpp" />
     <ClCompile Include="BattleField.cpp" />
+    <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Command.cpp" />
     <ClCompile Include="ConsoleGame.cpp" />
     <ClCompile Include="CrazyTank.cpp" />
     <ClCompile Include="CrazyTankInput.cpp" />
     <ClCompile Include="Direction.cpp" />
     <ClCompile Include="DynamicEntity.cpp" />
+    <ClCompile Include="EnemyTank.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Fire.cpp" />
     <ClCompile Include="GamePaused.cpp" />

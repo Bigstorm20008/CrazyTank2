@@ -72,7 +72,7 @@ void PlayerTank::fire(ConsoleGame& game)
 	}
 	else
 	{
-		PlayerBullet* bullet = new PlayerBullet(nextPoint, m_currentDirection, bulletPresent);
+		PlayerBullet* bullet = new PlayerBullet(nextPoint, bulletPresent, bulletDurability, m_currentDirection);
 		game.m_entities.push_back(bullet);
 		game.m_backBuffer.setValueInPosition(nextPoint.xPosition, nextPoint.yPosition, bulletPresent);
 	}
@@ -82,6 +82,7 @@ void PlayerTank::fire(ConsoleGame& game)
 void PlayerTank::moveToNextPosition(const Direction::Directions& direction, BattleField& playfield)
 {
 	Point nextPosition = computeNextPosition(direction);
+	m_currentDirection = direction;
 	if (nextPosition == m_currentPosition)
 	{
 		return;
@@ -96,7 +97,7 @@ void PlayerTank::moveToNextPosition(const Direction::Directions& direction, Batt
 		playfield.setValueInPosition(nextPosition.xPosition, nextPosition.yPosition, m_actorPresent);
 		playfield.setValueInPosition(m_currentPosition.xPosition, m_currentPosition.yPosition, emptySpace);
 		m_currentPosition = nextPosition;
-		m_currentDirection = direction;
+		
 	}
 	
 	 

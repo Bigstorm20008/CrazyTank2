@@ -5,9 +5,13 @@ class MoveBack :
 	public Command
 {
 public:
-	explicit MoveBack();
+	friend class CrazyTankInput;
+	
 	virtual ~MoveBack();
 
 	void execute(ConsoleGame& game) const override;
+
+private:
+	explicit MoveBack();
 };
 

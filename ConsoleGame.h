@@ -36,6 +36,7 @@ public:
 	friend class PlayerTank;
 
 	friend class WallBlock;
+	friend class Bullet;
 	friend class PlayerBullet;
 	friend class DynamicEntity;
 

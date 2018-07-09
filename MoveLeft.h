@@ -4,9 +4,13 @@ class MoveLeft :
 	public Command
 {
 public:
-	explicit MoveLeft();
+	friend class CrazyTankInput;
+
 	virtual ~MoveLeft();
 
 	void execute(ConsoleGame& game) const override;
+
+private:
+	explicit MoveLeft();
 };
 

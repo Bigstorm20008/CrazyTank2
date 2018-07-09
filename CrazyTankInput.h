@@ -14,11 +14,14 @@ class CrazyTankInput :
 	public Input
 {
 public:
-	explicit CrazyTankInput();
+	friend class CrazyTank;
+	
 	virtual ~CrazyTankInput();
 
 	const Command* const messageHandler(wchar_t& userInput)override;
+
 private:
 	Command* m_pCommand;
+	explicit CrazyTankInput();
 };
 

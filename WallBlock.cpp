@@ -1,13 +1,9 @@
 #include "WallBlock.h"
 
 
-WallBlock::WallBlock(const Point& position, const wchar_t* allPresents)
+WallBlock::WallBlock(const Point& position, const wchar_t& entityPresent, const unsigned int& durability, const wchar_t* allPresents)
+	: Entity(position, entityPresent, durability), m_pAllWallblockPresents(allPresents)
 {
-	m_currentPosition = position;	
-	
-	m_pAllWallblockPresents = allPresents;
-	m_durability = wcslen(m_pAllWallblockPresents);
-	m_presents = m_pAllWallblockPresents[0];
 }
 
 
@@ -17,8 +13,8 @@ WallBlock::~WallBlock()
 
 void WallBlock::doLogic(ConsoleGame& game)
 {
-	int arraySize = wcslen(m_pAllWallblockPresents);
-	int presentsIndex = arraySize - m_durability;
+	size_t arraySize = wcslen(m_pAllWallblockPresents);
+	size_t presentsIndex = arraySize - m_durability;
 
 	if (presentsIndex == arraySize)
 	{

@@ -9,9 +9,12 @@ class StartGame :
 	public Command
 {
 public:
-	explicit StartGame();
+	friend class CrazyTankInput;
 	virtual ~StartGame();
 
 	void execute(ConsoleGame& game) const override;
+
+private:
+	explicit StartGame();
 };
 

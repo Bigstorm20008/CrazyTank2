@@ -3,7 +3,7 @@ class Direction
 {
 public:
 	explicit Direction();
-	virtual ~Direction();
+	~Direction();
 	enum Directions {up, down, left, right} direction;
 };
 

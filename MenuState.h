@@ -11,10 +11,14 @@ class MenuState :
 	public GameState
 {
 public:
-	explicit MenuState();
+	friend class CrazyTank;
+	
 	virtual ~MenuState();
 
 	void update()override;
 	void render()override;
+
+private:
+	explicit MenuState();
 };
 

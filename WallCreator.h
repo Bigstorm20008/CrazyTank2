@@ -14,14 +14,18 @@ class Wall;
 class WallCreator
 {
 public:
-	explicit WallCreator();
-	virtual ~WallCreator();
+	friend class CrazyTank;
+
+	
+	~WallCreator();
 	Wall createWall(const wchar_t allWallBlockPresents[], const BattleField& battleField);
 
 private:
+	explicit WallCreator();
+
 	std::default_random_engine m_RandomEngine;
 	Point generatePoint(const BattleField& battleField);
-	bool createWallBlocks(Wall& wall, const wchar_t allWallBlockPresents[], const Point& startPoint, const BattleField& battleField);
+	bool createWallBlocks(const Point& position, const wchar_t* allWallBlockPresents, Wall& wall, const BattleField& battleField);
 	bool checkPoint(const Point& point, const BattleField& battleField)const;
 };
 

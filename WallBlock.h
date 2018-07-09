@@ -6,12 +6,17 @@ class WallBlock :
 	public Entity
 {
 public:
-	explicit WallBlock(const Point& position, const wchar_t* allPresents);
-	virtual ~WallBlock();
+	friend class CrazyTank;
+	friend class StrongHoldCreator;
+	friend class WallCreator;
+	
+	~WallBlock();
 
 	void doLogic(ConsoleGame& game)override;
 
 private:
+	explicit WallBlock(const Point& position, const wchar_t& entityPresent, const unsigned int& durability, const wchar_t* allPresents);
+
 	const wchar_t* m_pAllWallblockPresents;	
 };
 

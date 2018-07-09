@@ -9,11 +9,13 @@ class StrongHold
 public:
 	friend class StrongHoldCreator;
 
-	explicit StrongHold(const int& width, const int height);
-	virtual ~StrongHold();
+	
+	~StrongHold();
 
 	const std::vector<WallBlock>& getStrohgHoldBlocks()const;
 private:
+	explicit StrongHold(const int& width, const int height);
+
 	std::vector<WallBlock> m_strongHold;
 	int m_width;
 	int m_height;

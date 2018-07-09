@@ -38,26 +38,22 @@ void BattleField::print()const
 	}	
 }
 
-const wchar_t& BattleField::getValueInPosition(const int& x, const int& y)const
+const wchar_t& BattleField::getValueInPosition(const unsigned int& x, const unsigned int& y)const
 {
 	return m_battleField[y][x];
 }
 
-void BattleField::setValueInPosition(const int& x, const int& y, const wchar_t& value)
+void BattleField::setValueInPosition(const unsigned int& x, const unsigned int& y, const wchar_t& value)
 {
 	m_battleField[y][x] = value;
 }
 
-
-
-
-
-const int& BattleField::getWidth()const
+const unsigned int& BattleField::getWidth()const
 {
 	return m_width;
 }
 
-const int& BattleField::getHeight()const
+const unsigned int& BattleField::getHeight()const
 {
 	return m_height;
 }
@@ -69,7 +65,7 @@ bool BattleField::isFreePoint(const Point& point)const
 
 bool BattleField::isValidPoint(const Point& point)const
 {
-	if ((point.xPosition < 0) || (point.xPosition > (m_width-1)) || (point.yPosition < 0) ||(point.yPosition > (m_height-1)))
+	if ((point.xPosition > (m_width-1)) || (point.yPosition < 0) ||(point.yPosition > (m_height-1)))
 	{
 		return false;
 	}

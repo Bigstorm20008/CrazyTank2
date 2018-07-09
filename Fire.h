@@ -6,9 +6,12 @@ class Fire :
 	public Command
 {
 public:
-	explicit Fire();
+	friend class CrazyTankInput;
 	virtual ~Fire();
 
 	void execute(ConsoleGame& game) const override;
+
+private:
+	explicit Fire();
 };
 

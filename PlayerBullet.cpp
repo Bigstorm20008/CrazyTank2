@@ -1,12 +1,10 @@
 #include "PlayerBullet.h"
 
 
-PlayerBullet::PlayerBullet(const Point& startPostion, const Direction::Directions& direction, const wchar_t& bulletPresent)
+PlayerBullet::PlayerBullet(const Point& position, const wchar_t& entityPresent, const unsigned int& durability, const Direction::Directions& direction)
+	: Bullet(position,entityPresent,durability,direction)
 {
-	m_currentPosition = startPostion;
-	m_direction = direction;
-	m_presents = bulletPresent;
-	m_durability = 1;
+	
 }
 
 
@@ -27,6 +25,4 @@ void PlayerBullet::procesCollision(const Point& point, ConsoleGame& game)
 		entity->decreaseHealth();
 		game.m_entitiesToDelete.push_back(this);
 	}
-
-	
 }

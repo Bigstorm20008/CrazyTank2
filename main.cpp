@@ -1,7 +1,7 @@
 #include "vld.h"
 
 #include "CrazyTank.h"
-
+#include "EnemyTank.h"
 
 
 int main(void)

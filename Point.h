@@ -5,7 +5,7 @@ class Point
 public:
 	explicit Point(int xPos, int yPos);
 	explicit Point();
-	virtual~Point();
+	~Point();
 
 	int xPosition;
 	int yPosition;

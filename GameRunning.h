@@ -11,12 +11,14 @@ class GameRunning :
 	public GameState
 {
 public:
-	explicit GameRunning(ConsoleGame& game);
+	friend class StartGame;
+	
 	virtual ~GameRunning();
 
 	void update()override;
 	void render()override;
 private:
 	ConsoleGame* m_pGame;
+	explicit GameRunning(ConsoleGame& game);
 };
 

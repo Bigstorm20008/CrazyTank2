@@ -14,27 +14,30 @@ class Point;
 class BattleField
 {
 public:
-	explicit BattleField();
-	virtual ~BattleField();
+	friend class ConsoleGame;
+	friend class CrazyTank;
 
-	void init(const int& width,const int& height);
+	~BattleField();
 
-	void print()const;
+	const wchar_t& getValueInPosition(const unsigned int& x, const unsigned int& y)const;
+	void setValueInPosition(const unsigned int& x, const unsigned int& y, const wchar_t& value);
 
-	const wchar_t& getValueInPosition(const int& x, const int& y)const;
-	void setValueInPosition(const int& x, const int& y, const wchar_t& value);
-
-	const int& getWidth()const;
-	const int& getHeight()const;
+	const unsigned int& getWidth()const;
+	const unsigned int& getHeight()const;
 	std::vector<std::vector<wchar_t>>& getPlayField();
 
 	bool isFreePoint(const Point& point)const;
 	bool isValidPoint(const Point& point)const;
 private:
+	explicit BattleField();
+
+	void init(const int& width, const int& height);
+	void print()const;
+
 	std::vector<std::vector<wchar_t>> m_battleField;
 
-	int m_width;
-	int m_height;
+	unsigned int m_width;
+	unsigned int m_height;
 
 };
 
