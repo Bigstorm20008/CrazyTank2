@@ -1,6 +1,7 @@
 #pragma once
 
 #include "DynamicEntity.h"
+#include "CrazyTank.h"
 
 class EnemyTank :
 	public DynamicEntity

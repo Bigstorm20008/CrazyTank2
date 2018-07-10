@@ -12,17 +12,16 @@ EnemyTankCreator::~EnemyTankCreator()
 {
 }
 
-EnemyTank* EnemyTankCreator::createEnemyTank(const BattleField& battleField)
+EnemyTank* EnemyTankCreator::createEnemyTank(const BattleFieldHelpers& battleFieldHelper)
 {
-	BattleFieldHelpers helpers(battleField);
 	Point randomFreePoint;
 	do
 	{
-		randomFreePoint = helpers.getRandomFreePoint();
+		randomFreePoint = battleFieldHelper.getRandomFreePoint();
 	} 
-	while (!checkAreaArroundPoint(randomFreePoint, helpers));
+	while (!checkAreaArroundPoint(randomFreePoint, battleFieldHelper));
 
-	EnemyTank* tank = new EnemyTank(randomFreePoint, 'S', 3, Direction::down);
+	EnemyTank* tank = new EnemyTank(randomFreePoint, enemyTankPresent, enemyTankDurability, Direction::down);
 	
 	return tank;
 }

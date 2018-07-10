@@ -47,22 +47,22 @@ void CrazyTank::init()
 	Point playerTankStartPoint(actorStartXPosition, actorStartYPosition);
 	initPlayerTank(playerTankStartPoint, startTankDirection, playerTankPresents, actorDurability);
 
-	initWalls(wallBlockPresents, wallsOnBattleField);
+	initWalls(wallBlockPresents, wallsOnBattleField, minWallLenght, maxWallLenght);
 
-	initEnemyTanks('s', 3, 3);
+	initEnemyTanks(enemyAmount, enemyTankPresent, enemyTankDurability, offsetBeetwenTanks);
 
  	m_backBuffer = m_battleField;
 }
 
 
-void CrazyTank::initWalls(const wchar_t allWallBlockPresents[], const int& wallAmount)
+void CrazyTank::initWalls(const wchar_t allWallBlockPresents[], const int& wallAmount, const unsigned int& minWallLen, const unsigned int& maxWallLen)
 {
-	WallCreator wallCreator;
-
+	WallCreator wallCreator(allWallBlockPresents);
+	BattleFieldHelpers helper(m_battleField);
 	for (int i = 0; i < wallAmount; ++i)
 	{
 
-		Wall wall = wallCreator.createWall(allWallBlockPresents,m_battleField);
+		Wall wall = wallCreator.createWall(minWallLen,maxWallLen,helper);
 		auto& wallBlocks = wall.getWallBlocks();
 		for (auto& wallBlock : wallBlocks)
 		{
@@ -77,8 +77,9 @@ void CrazyTank::initWalls(const wchar_t allWallBlockPresents[], const int& wallA
 
 bool CrazyTank::initStronghold(const int& width, const int& height, const wchar_t allStrongHoldBlockPresents[])
 {
-	StrongHoldCreator creator;
-	StrongHold strongHold = creator.createStrongHold(width, height, allStrongHoldBlockPresents, m_battleField);
+	StrongHoldCreator creator(width,height,allStrongHoldBlockPresents);
+	BattleFieldHelpers helper(m_battleField);
+	StrongHold strongHold = creator.createStrongHold(helper);
 
 	auto strongHoldBlocks = strongHold.getStrohgHoldBlocks();
 	if (strongHoldBlocks.empty())
@@ -106,16 +107,17 @@ void CrazyTank::initPlayerTank(const Point& tankPosition, const Direction::Direc
 	m_battleField.setValueInPosition(tankPosition.xPosition, tankPosition.yPosition, tankPresent);
 }
 
-void CrazyTank::initEnemyTanks(const wchar_t& enemyTankPresent, const unsigned int enemyTankDurability, const unsigned int offsetBetweenTanks)
+void CrazyTank::initEnemyTanks(const unsigned int& tanksAmount, const wchar_t& enemyTankPresent, const unsigned int enemyTankDurability, const unsigned int offsetBetweenTanks)
 {
 	EnemyTankCreator creator(enemyTankPresent, enemyTankDurability, offsetBetweenTanks);
-	for (int i = 0; i < 10; ++i)
+	BattleFieldHelpers helper(m_battleField);
+	for (int i = 0; i < tanksAmount; ++i)
 	{
-		EnemyTank* enemyTank = creator.createEnemyTank(m_battleField);
+		EnemyTank* enemyTank = creator.createEnemyTank(helper);
 		m_entities.push_back(enemyTank);
 		int x = enemyTank->getPosition().xPosition;
 		int y = enemyTank->getPosition().yPosition;
-		m_battleField.setValueInPosition(x, y, 'S');
+		m_battleField.setValueInPosition(x, y, enemyTankPresent);
 	}
 }
 

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "StrongHold.h"
-#include "BattleField.h"
+#include "BattleFieldHelpers.h"
 #include "Direction.h"
 
 class StrongHoldCreator
@@ -11,13 +11,17 @@ public:
 	
 	~StrongHoldCreator();
 
-	const StrongHold createStrongHold(const unsigned int& width, const unsigned int& height, const wchar_t allStrongholdBlockPresents[], const BattleField& battlefield);
+	const StrongHold createStrongHold(const BattleFieldHelpers& battleFieldHelper);
 
 private:
-	explicit StrongHoldCreator();
+	explicit StrongHoldCreator(const unsigned int& width, const unsigned int& height, const wchar_t allStrongholdBlockPresents[]);
 
-	const std::vector<WallBlock> constructWall(const Point& startPoint, const wchar_t& entityPresent, const unsigned int& durability, const wchar_t* allWallBlockPresents,
-		                                       const unsigned int& lenght, const Direction::Directions& direction);
+	unsigned int m_width;
+	unsigned int m_height;
+	const wchar_t* m_allWallBlockPresents;
+	unsigned int m_strongholdBlockDurability;
+
+	const std::vector<WallBlock> constructWall(const Point& startPoint, const unsigned int& lenght, const Direction::Directions& direction);
 
 
 };

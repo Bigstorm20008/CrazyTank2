@@ -2,9 +2,8 @@
 
 #include "BattleField.h"
 
-WallCreator::WallCreator()
+WallCreator::WallCreator(const wchar_t allWallBlockPresents[]) : m_pAllWallBlockPresents(allWallBlockPresents), m_wallBlockDurability(wcslen(allWallBlockPresents))
 {
-	m_RandomEngine = std::default_random_engine(static_cast<unsigned int>(time(0)));
 }
 
 
@@ -12,47 +11,25 @@ WallCreator::~WallCreator()
 {
 }
 
-Wall WallCreator::createWall(const wchar_t allWallBlockPresents[], const BattleField& battleField)
+Wall WallCreator::createWall(const unsigned int& minWallLenght, const unsigned int maxWallLenght, const BattleFieldHelpers& battleFieldHelper)
 {
-	std::uniform_int_distribution<int> distance(1, 6);
-	
-	//Generate random wall lenght
-	int wallLenght = distance(m_RandomEngine);
+	RandomEngine* random = nullptr;
+	auto engine = random->getInstance();
+	const unsigned int wallLenght = engine->getRandomInteger(minWallLenght, maxWallLenght);
 
-	//Generate random start point for wall
-	Point startPoint;
-	do
-	{ 
-		startPoint = generatePoint(battleField);
-	}while (!battleField.isFreePoint(startPoint));
+	Point freePoint = battleFieldHelper.getRandomFreePoint();
 
 	//Create wallblocks for wall
 	Wall wall(wallLenght);
-	createWallBlocks(startPoint, allWallBlockPresents, wall, battleField);
+	createWallBlocks(freePoint, wall, battleFieldHelper);
 
 	return wall;
 }
 
-Point WallCreator::generatePoint(const BattleField& battleField)
-{
-	int battleFieldWidth = battleField.getWidth();
-	int battleFieldHeight = battleField.getHeight();
-
-	std::uniform_int_distribution<int> widthDistance(0, battleFieldWidth - 1);
-	std::uniform_int_distribution<int> heightDistance(0, battleFieldHeight - 1);
-
-	int x = widthDistance(m_RandomEngine);
-	int y = heightDistance(m_RandomEngine);
-
-	return Point(x, y);
-}
-
-bool WallCreator::createWallBlocks(const Point& position, const wchar_t* allWallBlockPresents, Wall& wall, const BattleField& battleField)
+bool WallCreator::createWallBlocks(const Point& position, Wall& wall, const BattleFieldHelpers& battleFieldHelper)
 {	 
-	unsigned int wallBlockDurability = wcslen(allWallBlockPresents);
-	wchar_t startWallBlockPresent = allWallBlockPresents[0];
 
-	wall.m_wallBlocks.push_back(new WallBlock(position, startWallBlockPresent, wallBlockDurability, allWallBlockPresents));
+	wall.m_wallBlocks.push_back(new WallBlock(position, m_pAllWallBlockPresents[0], m_wallBlockDurability, m_pAllWallBlockPresents));
 
 	Point nextPoint = position;
 
@@ -60,36 +37,36 @@ bool WallCreator::createWallBlocks(const Point& position, const wchar_t* allWall
 	{
 		Point rightPoint = position;
 		++rightPoint.xPosition;
-		if (checkPoint(rightPoint, battleField))
+		if (battleFieldHelper.isFreePoint(rightPoint))
 		{
-			wall.m_wallBlocks.push_back(new WallBlock(rightPoint, startWallBlockPresent, wallBlockDurability, allWallBlockPresents));
+			wall.m_wallBlocks.push_back(new WallBlock(rightPoint, m_pAllWallBlockPresents[0], m_wallBlockDurability, m_pAllWallBlockPresents));
 			nextPoint = rightPoint;
 			continue;
 		}
 
 		Point leftPoint = position;
 		--leftPoint.xPosition;
-		if (checkPoint(leftPoint, battleField))
+		if (battleFieldHelper.isFreePoint(leftPoint))
 		{
-			wall.m_wallBlocks.push_back(new WallBlock(leftPoint, startWallBlockPresent, wallBlockDurability, allWallBlockPresents));
+			wall.m_wallBlocks.push_back(new WallBlock(leftPoint, m_pAllWallBlockPresents[0], m_wallBlockDurability, m_pAllWallBlockPresents));
 			nextPoint = leftPoint;
 			continue;
 		}
 
 		Point upPoint = position;
 		++upPoint.yPosition;
-		if (checkPoint(upPoint, battleField))
+		if (battleFieldHelper.isFreePoint(upPoint))
 		{
-			wall.m_wallBlocks.push_back(new WallBlock(upPoint, startWallBlockPresent, wallBlockDurability, allWallBlockPresents));
+			wall.m_wallBlocks.push_back(new WallBlock(upPoint, m_pAllWallBlockPresents[0], m_wallBlockDurability, m_pAllWallBlockPresents));
 			nextPoint = upPoint;
 			continue;
 		}
 
 		Point downPoint = position;
 		--downPoint.yPosition;
-		if (checkPoint(downPoint, battleField))
+		if (battleFieldHelper.isFreePoint(downPoint))
 		{
-			wall.m_wallBlocks.push_back(new WallBlock(downPoint, startWallBlockPresent, wallBlockDurability, allWallBlockPresents));
+			wall.m_wallBlocks.push_back(new WallBlock(downPoint, m_pAllWallBlockPresents[0], m_wallBlockDurability, m_pAllWallBlockPresents));
 			nextPoint = downPoint;
 			continue;
 		}
@@ -106,14 +83,4 @@ bool WallCreator::createWallBlocks(const Point& position, const wchar_t* allWall
 	return true;
 }
 
-bool WallCreator::checkPoint(const Point& point, const BattleField& battleField)const
-{
-	if (battleField.isValidPoint(point) && (battleField.isFreePoint(point)))
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
+

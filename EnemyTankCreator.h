@@ -3,6 +3,7 @@
 #include<random>
 #include<ctime>
 
+class EnemyTank;
 #include"EnemyTank.h"
 #include "BattleFieldHelpers.h"
 
@@ -13,7 +14,7 @@ public:
 
 	~EnemyTankCreator();
 
-	EnemyTank* createEnemyTank(const BattleField& battleField);
+	EnemyTank* createEnemyTank(const BattleFieldHelpers& battleFieldHelper);
 private:
 	explicit EnemyTankCreator(const wchar_t& enemyTankPresent, const unsigned int& enemyTankDurability, const unsigned int offsetBetweenTanks);
 

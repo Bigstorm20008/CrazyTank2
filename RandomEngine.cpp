@@ -27,3 +27,12 @@ const int RandomEngine::getRandomInteger(const int& startDistance, const int& en
 	std::uniform_int_distribution<int> widthDistance(startDistance, endDistance);
 	return widthDistance(dre);
 }
+
+const Direction::Directions RandomEngine::getRandomDirection()
+{
+	unsigned int directionSize = sizeof(Direction::Directions);
+	std::uniform_int_distribution<int> distance(0, directionSize);
+
+	Direction::Directions direction = static_cast<Direction::Directions>(distance(dre));
+	return direction;
+}

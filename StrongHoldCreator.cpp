@@ -1,7 +1,8 @@
 #include "StrongHoldCreator.h"
 
 
-StrongHoldCreator::StrongHoldCreator()
+StrongHoldCreator::StrongHoldCreator(const unsigned int& width, const unsigned int& height, const wchar_t allStrongholdBlockPresents[])
+	: m_width(width), m_height(height), m_allWallBlockPresents(allStrongholdBlockPresents), m_strongholdBlockDurability(wcslen(allStrongholdBlockPresents))
 {
 }
 
@@ -10,33 +11,32 @@ StrongHoldCreator::~StrongHoldCreator()
 {
 }
 
-const StrongHold StrongHoldCreator::createStrongHold(const unsigned int& width, const unsigned int& height, const wchar_t* allStrongholdBlockPresents, const BattleField& battlefield)
+const StrongHold StrongHoldCreator::createStrongHold(const BattleFieldHelpers& battleFieldHelper)
 {
-	StrongHold stronghold(width,height);
-	int battleFieldWidth = battlefield.getWidth();
-	int battleFieldHeight = battlefield.getHeight();
+	StrongHold stronghold(m_width,m_height);
+	unsigned int battleFieldWidth = battleFieldHelper.getWidth();
+	unsigned int battleFieldHeight = battleFieldHelper.getHeight();
 
-	if ((height > battleFieldHeight) || (width > battleFieldWidth))
+	if ((m_height > battleFieldHeight) || (m_width > battleFieldWidth))
 	{
 		return stronghold;
 	}
 
 	int firstWallBlock_YPosition = battleFieldHeight - 1;
-	int firstWallBlock_XPosition = static_cast<int>((battleFieldWidth - width) / 2);
+	int firstWallBlock_XPosition = static_cast<int>((battleFieldWidth - m_width) / 2);
 
-	unsigned int strongholdBlockDurability = wcslen(allStrongholdBlockPresents);
-	const wchar_t startBlockPresent = allStrongholdBlockPresents[0];
+	const wchar_t startBlockPresent = m_allWallBlockPresents[0];
 
 	Point startPoint(firstWallBlock_XPosition, firstWallBlock_YPosition);
-	auto leftWall = constructWall(startPoint, startBlockPresent, strongholdBlockDurability, allStrongholdBlockPresents, height, Direction::up);
+	auto leftWall = constructWall(startPoint, m_height, Direction::up);
 
-	startPoint.yPosition -= (height-1);
+	startPoint.yPosition -= (m_height-1);
 	++startPoint.xPosition;
-	auto upWall = constructWall(startPoint, startBlockPresent, strongholdBlockDurability, allStrongholdBlockPresents, width, Direction::right);
+	auto upWall = constructWall(startPoint, m_width, Direction::right);
 
-	startPoint.xPosition += (width-1);
+	startPoint.xPosition += (m_width-1);
 	++startPoint.yPosition;
-	auto rightWall = constructWall(startPoint, startBlockPresent, strongholdBlockDurability, allStrongholdBlockPresents, height - 1, Direction::down);
+	auto rightWall = constructWall(startPoint, m_height - 1, Direction::down);
 
 	for (auto& block : leftWall)
 	{
@@ -57,20 +57,19 @@ const StrongHold StrongHoldCreator::createStrongHold(const unsigned int& width, 
 }
 
 
-const std::vector<WallBlock> StrongHoldCreator::constructWall(const Point& startPoint, const wchar_t& entityPresent, const unsigned int& durability, const wchar_t allWallBlockPresents[],
-	                                                          const unsigned int& lenght, const Direction::Directions& direction)
+const std::vector<WallBlock> StrongHoldCreator::constructWall(const Point& startPoint, const unsigned int& lenght, const Direction::Directions& direction)
 {
 	std::vector<WallBlock> constructedBlocks;
 	constructedBlocks.reserve(lenght);
 
-	int currentLenght = 0;
+	unsigned int currentLenght = 0;
 	switch (direction)
 	{
 		case Direction::up:
 		{
 			for (Point nextPoint = startPoint; currentLenght < lenght; --nextPoint.yPosition)
 			{
-				constructedBlocks.push_back(WallBlock(nextPoint, entityPresent, durability, allWallBlockPresents));
+				constructedBlocks.push_back(WallBlock(nextPoint, m_allWallBlockPresents[0], m_strongholdBlockDurability, m_allWallBlockPresents));
 				++currentLenght;
 			}
 			break;
@@ -79,7 +78,7 @@ const std::vector<WallBlock> StrongHoldCreator::constructWall(const Point& start
 		{
 			for (Point nextPoint = startPoint; currentLenght < lenght; ++nextPoint.yPosition)
 			{
-				constructedBlocks.push_back(WallBlock(nextPoint, entityPresent, durability, allWallBlockPresents));
+				constructedBlocks.push_back(WallBlock(nextPoint, m_allWallBlockPresents[0], m_strongholdBlockDurability, m_allWallBlockPresents));
 				++currentLenght;
 			}
 			break;
@@ -88,7 +87,7 @@ const std::vector<WallBlock> StrongHoldCreator::constructWall(const Point& start
 		{
 			for (Point nextPoint = startPoint; currentLenght < lenght; --nextPoint.xPosition)
 			{
-				constructedBlocks.push_back(WallBlock(nextPoint, entityPresent, durability, allWallBlockPresents));
+				constructedBlocks.push_back(WallBlock(nextPoint, m_allWallBlockPresents[0], m_strongholdBlockDurability, m_allWallBlockPresents));
 				++currentLenght;
 			}
 			break;
@@ -97,7 +96,7 @@ const std::vector<WallBlock> StrongHoldCreator::constructWall(const Point& start
 		{
 			for (Point nextPoint = startPoint; currentLenght < lenght; ++nextPoint.xPosition)
 			{
-				constructedBlocks.push_back(WallBlock(nextPoint, entityPresent, durability, allWallBlockPresents));
+				constructedBlocks.push_back(WallBlock(nextPoint, m_allWallBlockPresents[0], m_strongholdBlockDurability, m_allWallBlockPresents));
 				++currentLenght;
 			}
 			break;

@@ -6,7 +6,6 @@ class WallBlock :
 	public Entity
 {
 public:
-	friend class CrazyTank;
 	friend class StrongHoldCreator;
 	friend class WallCreator;
 	

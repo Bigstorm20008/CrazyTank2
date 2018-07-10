@@ -4,9 +4,9 @@
 #include<ctime>
 
 
+#include "BattleFieldHelpers.h"
+#include "RandomEngine.h"
 
-class BattleField;
-#include "BattleField.h"
 
 class Wall;
 #include "Wall.h"
@@ -18,14 +18,14 @@ public:
 
 	
 	~WallCreator();
-	Wall createWall(const wchar_t allWallBlockPresents[], const BattleField& battleField);
+	Wall createWall(const unsigned int& minWallLenght,const unsigned int maxWallLenght, const BattleFieldHelpers& battleFieldHelper);
 
 private:
-	explicit WallCreator();
+	explicit WallCreator(const wchar_t allWallBlockPresents[]);
 
-	std::default_random_engine m_RandomEngine;
-	Point generatePoint(const BattleField& battleField);
-	bool createWallBlocks(const Point& position, const wchar_t* allWallBlockPresents, Wall& wall, const BattleField& battleField);
-	bool checkPoint(const Point& point, const BattleField& battleField)const;
+	bool createWallBlocks(const Point& position, Wall& wall, const BattleFieldHelpers& battleFieldHelper);
+
+	const wchar_t* m_pAllWallBlockPresents;
+	const unsigned int m_wallBlockDurability;
 };
 

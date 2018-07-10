@@ -56,13 +56,14 @@ protected:
 	BattleField m_backBuffer;
 
 	std::vector<Entity*> m_entities;
+	std::vector<Entity*> m_entitiesToDelete;
 	Actor* m_pActor;
 
 	void printBattleField()const;
 	void setNewState(GameState* pState);
 	
 private:
-	std::vector<Entity*> m_entitiesToDelete;
+	
 	bool m_isRunning;
 	Entity* getEntityAtPoint(const Point& point) const;
 	
